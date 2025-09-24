@@ -1,5 +1,5 @@
 {
-  "lastUpdated": "2024-09-24T12:00:00Z",
+  "lastUpdated": "2025-09-24T10:00:00Z",
   "dataVersion": "1.0",
   "summary": {
     "totalAgents": 5,
@@ -9,7 +9,7 @@
   },
   "records": [
     {
-      "date": "2024-09-24",
+      "date": "2025-09-24",
       "agent_id": "agent_001",
       "display_name": "Alpha Agent",
       "xHandle": "@alphaagent",
@@ -17,7 +17,7 @@
       "impressions": 125000
     },
     {
-      "date": "2024-09-24",
+      "date": "2025-09-24",
       "agent_id": "agent_002",
       "display_name": "Beta Agent",
       "xHandle": "@betaagent",
@@ -25,7 +25,7 @@
       "impressions": 110000
     },
     {
-      "date": "2024-09-24",
+      "date": "2025-09-24",
       "agent_id": "agent_003",
       "display_name": "Gamma Agent",
       "xHandle": "@gammaagent",
@@ -33,7 +33,7 @@
       "impressions": 135000
     },
     {
-      "date": "2024-09-24",
+      "date": "2025-09-24",
       "agent_id": "agent_004",
       "display_name": "Delta Agent",
       "xHandle": "@deltaagent",
@@ -41,7 +41,7 @@
       "impressions": 120000
     },
     {
-      "date": "2024-09-24",
+      "date": "2025-09-24",
       "agent_id": "agent_005",
       "display_name": "Epsilon Agent",
       "xHandle": "@epsilonagent",
@@ -49,7 +49,7 @@
       "impressions": 135000
     },
     {
-      "date": "2024-09-23",
+      "date": "2025-09-23",
       "agent_id": "agent_001",
       "display_name": "Alpha Agent",
       "xHandle": "@alphaagent",
@@ -57,7 +57,7 @@
       "impressions": 120000
     },
     {
-      "date": "2024-09-23",
+      "date": "2025-09-23",
       "agent_id": "agent_002",
       "display_name": "Beta Agent",
       "xHandle": "@betaagent",
@@ -65,7 +65,7 @@
       "impressions": 115000
     },
     {
-      "date": "2024-09-23",
+      "date": "2025-09-23",
       "agent_id": "agent_003",
       "display_name": "Gamma Agent",
       "xHandle": "@gammaagent",
@@ -73,7 +73,7 @@
       "impressions": 130000
     },
     {
-      "date": "2024-09-23",
+      "date": "2025-09-23",
       "agent_id": "agent_004",
       "display_name": "Delta Agent",
       "xHandle": "@deltaagent",
@@ -81,7 +81,7 @@
       "impressions": 125000
     },
     {
-      "date": "2024-09-23",
+      "date": "2025-09-23",
       "agent_id": "agent_005",
       "display_name": "Epsilon Agent",
       "xHandle": "@epsilonagent",
@@ -89,7 +89,7 @@
       "impressions": 130000
     },
     {
-      "date": "2024-09-22",
+      "date": "2025-09-22",
       "agent_id": "agent_001",
       "display_name": "Alpha Agent",
       "xHandle": "@alphaagent",
@@ -97,7 +97,7 @@
       "impressions": 118000
     },
     {
-      "date": "2024-09-22",
+      "date": "2025-09-22",
       "agent_id": "agent_002",
       "display_name": "Beta Agent",
       "xHandle": "@betaagent",
@@ -105,7 +105,7 @@
       "impressions": 112000
     },
     {
-      "date": "2024-09-22",
+      "date": "2025-09-22",
       "agent_id": "agent_003",
       "display_name": "Gamma Agent",
       "xHandle": "@gammaagent",
@@ -113,7 +113,7 @@
       "impressions": 128000
     },
     {
-      "date": "2024-09-22",
+      "date": "2025-09-22",
       "agent_id": "agent_004",
       "display_name": "Delta Agent",
       "xHandle": "@deltaagent",
@@ -121,7 +121,7 @@
       "impressions": 122000
     },
     {
-      "date": "2024-09-22",
+      "date": "2025-09-22",
       "agent_id": "agent_005",
       "display_name": "Epsilon Agent",
       "xHandle": "@epsilonagent",
@@ -129,7 +129,7 @@
       "impressions": 132000
     },
     {
-      "date": "2024-09-21",
+      "date": "2025-09-21",
       "agent_id": "agent_001",
       "display_name": "Alpha Agent",
       "xHandle": "@alphaagent",
@@ -137,7 +137,7 @@
       "impressions": 115000
     },
     {
-      "date": "2024-09-21",
+      "date": "2025-09-21",
       "agent_id": "agent_002",
       "display_name": "Beta Agent",
       "xHandle": "@betaagent",
@@ -145,7 +145,7 @@
       "impressions": 110000
     },
     {
-      "date": "2024-09-21",
+      "date": "2025-09-21",
       "agent_id": "agent_003",
       "display_name": "Gamma Agent",
       "xHandle": "@gammaagent",
@@ -153,7 +153,7 @@
       "impressions": 125000
     },
     {
-      "date": "2024-09-21",
+      "date": "2025-09-21",
       "agent_id": "agent_004",
       "display_name": "Delta Agent",
       "xHandle": "@deltaagent",
@@ -161,7 +161,7 @@
       "impressions": 120000
     },
     {
-      "date": "2024-09-21",
+      "date": "2025-09-21",
       "agent_id": "agent_005",
       "display_name": "Epsilon Agent",
       "xHandle": "@epsilonagent",
@@ -169,7 +169,7 @@
       "impressions": 130000
     },
     {
-      "date": "2024-09-20",
+      "date": "2025-09-20",
       "agent_id": "agent_001",
       "display_name": "Alpha Agent",
       "xHandle": "@alphaagent",
@@ -177,7 +177,7 @@
       "impressions": 117000
     },
     {
-      "date": "2024-09-20",
+      "date": "2025-09-20",
       "agent_id": "agent_002",
       "display_name": "Beta Agent",
       "xHandle": "@betaagent",
@@ -185,7 +185,7 @@
       "impressions": 108000
     },
     {
-      "date": "2024-09-20",
+      "date": "2025-09-20",
       "agent_id": "agent_003",
       "display_name": "Gamma Agent",
       "xHandle": "@gammaagent",
@@ -193,7 +193,7 @@
       "impressions": 127000
     },
     {
-      "date": "2024-09-20",
+      "date": "2025-09-20",
       "agent_id": "agent_004",
       "display_name": "Delta Agent",
       "xHandle": "@deltaagent",
@@ -201,7 +201,7 @@
       "impressions": 118000
     },
     {
-      "date": "2024-09-20",
+      "date": "2025-09-20",
       "agent_id": "agent_005",
       "display_name": "Epsilon Agent",
       "xHandle": "@epsilonagent",
@@ -209,7 +209,7 @@
       "impressions": 128000
     },
     {
-      "date": "2024-09-19",
+      "date": "2025-09-19",
       "agent_id": "agent_001",
       "display_name": "Alpha Agent",
       "xHandle": "@alphaagent",
@@ -217,7 +217,7 @@
       "impressions": 116000
     },
     {
-      "date": "2024-09-19",
+      "date": "2025-09-19",
       "agent_id": "agent_002",
       "display_name": "Beta Agent",
       "xHandle": "@betaagent",
@@ -225,7 +225,7 @@
       "impressions": 109000
     },
     {
-      "date": "2024-09-19",
+      "date": "2025-09-19",
       "agent_id": "agent_003",
       "display_name": "Gamma Agent",
       "xHandle": "@gammaagent",
@@ -233,7 +233,7 @@
       "impressions": 126000
     },
     {
-      "date": "2024-09-19",
+      "date": "2025-09-19",
       "agent_id": "agent_004",
       "display_name": "Delta Agent",
       "xHandle": "@deltaagent",
@@ -241,7 +241,7 @@
       "impressions": 119000
     },
     {
-      "date": "2024-09-19",
+      "date": "2025-09-19",
       "agent_id": "agent_005",
       "display_name": "Epsilon Agent",
       "xHandle": "@epsilonagent",
@@ -249,7 +249,7 @@
       "impressions": 129000
     },
     {
-      "date": "2024-09-18",
+      "date": "2025-09-18",
       "agent_id": "agent_001",
       "display_name": "Alpha Agent",
       "xHandle": "@alphaagent",
@@ -257,7 +257,7 @@
       "impressions": 114000
     },
     {
-      "date": "2024-09-18",
+      "date": "2025-09-18",
       "agent_id": "agent_002",
       "display_name": "Beta Agent",
       "xHandle": "@betaagent",
@@ -265,7 +265,7 @@
       "impressions": 107000
     },
     {
-      "date": "2024-09-18",
+      "date": "2025-09-18",
       "agent_id": "agent_003",
       "display_name": "Gamma Agent",
       "xHandle": "@gammaagent",
@@ -273,7 +273,7 @@
       "impressions": 124000
     },
     {
-      "date": "2024-09-18",
+      "date": "2025-09-18",
       "agent_id": "agent_004",
       "display_name": "Delta Agent",
       "xHandle": "@deltaagent",
@@ -281,7 +281,7 @@
       "impressions": 117000
     },
     {
-      "date": "2024-09-18",
+      "date": "2025-09-18",
       "agent_id": "agent_005",
       "display_name": "Epsilon Agent",
       "xHandle": "@epsilonagent",

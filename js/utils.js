@@ -231,7 +231,7 @@ const DataManager = {
 
         if (hoursSinceUpdate < 1) {
             return 'fresh';
-        } else if (hoursSinceUpdate < 24) {
+        } else if (hoursSinceUpdate < 168) {  // 7 days instead of 24 hours
             return 'stale';
         } else {
             return 'error';
