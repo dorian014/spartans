@@ -1,6 +1,6 @@
-name: 🔐 Generate Password Hash
+name: 🔐 Generate Password Hashes
 
-run-name: ${{ github.event_name == 'workflow_dispatch' && '🔄 Manual hash generation by @' + github.actor || github.event_name == 'push' && '🔐 Auto-regeneration after file change' || '🔐 Hash generation' }}
+run-name: ${{ github.event_name == 'workflow_dispatch' && '🔄 Manual hash generation' || github.event_name == 'push' && '🔐 Hash regeneration after file change' || '🔐 Hash generation' }}
 
 on:
   push:
