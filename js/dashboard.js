@@ -32,8 +32,10 @@ async function initializeDashboard() {
         // Load data
         const success = await utils.DataManager.loadData();
         if (!success) {
-            // Redirect to error page if data loading fails
-            window.location.href = 'error.html';
+            // Hide dashboard content and show error state
+            document.getElementById('dashboardContent').style.display = 'none';
+            document.getElementById('errorState').style.display = 'block';
+            showLoading(false);
             return;
         }
 
@@ -51,7 +53,9 @@ async function initializeDashboard() {
 
     } catch (error) {
         console.error('Dashboard initialization error:', error);
-        showError('Failed to initialize dashboard');
+        // Hide dashboard content and show error state
+        document.getElementById('dashboardContent').style.display = 'none';
+        document.getElementById('errorState').style.display = 'block';
     } finally {
         showLoading(false);
     }

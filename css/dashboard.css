@@ -730,6 +730,38 @@
     }
 }
 
+/* Footer */
+.dashboard-footer {
+    margin-top: auto;
+    padding: 2rem 0;
+    border-top: 1px solid var(--border-color);
+    background: rgba(0, 41, 56, 0.3);
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.dashboard-footer .powered-by {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+.dashboard-footer .qstarlabs-logo {
+    height: 20px;
+    width: auto;
+    color: var(--accent-primary);
+    opacity: 0.9;
+    transition: opacity var(--transition-base);
+}
+
+.dashboard-footer .qstarlabs-logo:hover {
+    opacity: 1;
+}
+
 /* Animations */
 @keyframes pulse {
     0% {
