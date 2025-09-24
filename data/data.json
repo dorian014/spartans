@@ -5,7 +5,7 @@
     "totalAgents": 5,
     "totalDays": 7,
     "totalPosts": 1450,
-    "totalImpressions": 2875000
+    "totalImpressions": 215000
   },
   "records": [
     {
@@ -14,7 +14,7 @@
       "display_name": "Michael",
       "xHandle": "@michael_ai",
       "posts": 42,
-      "impressions": 125000
+      "impressions": 8500
     },
     {
       "date": "2025-09-24",
@@ -22,7 +22,7 @@
       "display_name": "Jennifer",
       "xHandle": "@jennifer_bot",
       "posts": 38,
-      "impressions": 110000
+      "impressions": 7200
     },
     {
       "date": "2025-09-24",
@@ -30,7 +30,7 @@
       "display_name": "David",
       "xHandle": "@david_tech",
       "posts": 45,
-      "impressions": 135000
+      "impressions": 9100
     },
     {
       "date": "2025-09-24",
@@ -38,7 +38,7 @@
       "display_name": "Sarah",
       "xHandle": "@sarah_ml",
       "posts": 35,
-      "impressions": 120000
+      "impressions": 6800
     },
     {
       "date": "2025-09-24",
@@ -46,7 +46,7 @@
       "display_name": "James",
       "xHandle": "@james_data",
       "posts": 45,
-      "impressions": 135000
+      "impressions": 9100
     },
     {
       "date": "2025-09-23",
@@ -54,7 +54,7 @@
       "display_name": "Michael",
       "xHandle": "@michael_ai",
       "posts": 35,
-      "impressions": 120000
+      "impressions": 6800
     },
     {
       "date": "2025-09-23",
@@ -78,7 +78,7 @@
       "display_name": "Sarah",
       "xHandle": "@sarah_ml",
       "posts": 42,
-      "impressions": 125000
+      "impressions": 8500
     },
     {
       "date": "2025-09-23",
@@ -142,7 +142,7 @@
       "display_name": "Jennifer",
       "xHandle": "@jennifer_bot",
       "posts": 38,
-      "impressions": 110000
+      "impressions": 7200
     },
     {
       "date": "2025-09-21",
@@ -150,7 +150,7 @@
       "display_name": "David",
       "xHandle": "@david_tech",
       "posts": 42,
-      "impressions": 125000
+      "impressions": 8500
     },
     {
       "date": "2025-09-21",
@@ -158,7 +158,7 @@
       "display_name": "Sarah",
       "xHandle": "@sarah_ml",
       "posts": 35,
-      "impressions": 120000
+      "impressions": 6800
     },
     {
       "date": "2025-09-21",
