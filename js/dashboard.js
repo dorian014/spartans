@@ -106,8 +106,7 @@ function updateStatsCards() {
 function updateCharts() {
     const activeBtn = document.querySelector('.chart-toggle-btn.active');
     const metric = activeBtn ? activeBtn.dataset.metric : 'posts';
-    const sortBtn = document.querySelector('.chart-sort-btn');
-    const sortOrder = sortBtn ? sortBtn.dataset.sort : 'desc';
+    const sortOrder = 'desc'; // Default sort order
 
     if (typeof chartUtils !== 'undefined') {
         chartUtils.updateAllCharts(metric, sortOrder);
