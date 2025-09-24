@@ -5,8 +5,8 @@ let timelineChart = null;
 let postsChart = null;
 let impressionsChart = null;
 
-// Chart.js default configuration
-Chart.defaults.font.family = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+// Chart.js default configuration - Spartans theme
+Chart.defaults.font.family = "'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
 Chart.defaults.color = '#a0a0a0';
 Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.1)';
 
@@ -346,17 +346,17 @@ function initImpressionsChart(data, sortOrder = 'desc') {
     });
 }
 
-// Create gradient for bar charts
+// Create gradient for bar charts - Spartans theme
 function createGradient(ctx, color) {
     const canvas = ctx.getContext('2d');
     const gradient = canvas.createLinearGradient(0, 0, 0, 300);
 
     if (color === CONFIG.chartColors.primary) {
-        gradient.addColorStop(0, '#8b5cf6');
-        gradient.addColorStop(1, '#6d28d9');
+        gradient.addColorStop(0, '#C8FF00');
+        gradient.addColorStop(1, '#8FB300');
     } else if (color === CONFIG.chartColors.secondary) {
-        gradient.addColorStop(0, '#3b82f6');
-        gradient.addColorStop(1, '#2563eb');
+        gradient.addColorStop(0, '#00FF41');
+        gradient.addColorStop(1, '#00B82E');
     } else {
         gradient.addColorStop(0, color);
         gradient.addColorStop(1, color);

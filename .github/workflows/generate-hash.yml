@@ -1,0 +1,47 @@
+name: 🔐 Generate Password Hash
+
+run-name: ${{ github.event_name == 'workflow_dispatch' && '🔄 Manual hash generation' || github.event_name == 'push' && '🔐 Hash regeneration after file change' || '🔐 Hash generation' }}
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/generate-hash.yml'
+      - 'auth-hash.json'  # Regenerate if auth-hash.json is modified/deleted
+  workflow_dispatch:  # Allows manual trigger from GitHub UI
+
+permissions:
+  contents: write
+
+jobs:
+  generate-hash:
+    name: Generate Authentication Hash
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout repository
+      uses: actions/checkout@v3
+
+    - name: 🔐 Generate auth-hash.json from secret password
+      env:
+        SPARTANS_PASSWORD: ${{ secrets.SPARTANS_PASSWORD }}
+      run: |
+        # Generate SHA-256 hash from the password
+        PASSWORD_HASH=$(echo -n "${SPARTANS_PASSWORD}" | sha256sum | cut -d' ' -f1)
+
+        # Create auth-hash.json with the computed hash
+        cat > auth-hash.json << EOF
+        {
+          "password": "${PASSWORD_HASH}",
+          "generated": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")"
+        }
+        EOF
+
+        echo "✅ Generated auth-hash.json with SHA-256 hash"
+
+    - name: 💾 Commit auth-hash.json
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -f auth-hash.json
+        git diff --quiet && git diff --staged --quiet || (git commit -m "🔐 Update password hash from secrets [skip ci]" && git push)

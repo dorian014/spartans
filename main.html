@@ -295,7 +295,21 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
-    <script src="config.js"></script>
+    <script>
+        // Chart configuration - Spartans theme
+        const CONFIG = {
+            chartColors: {
+                primary: '#C8FF00',      // Spartans lime green
+                secondary: '#00FF41',    // Secondary green
+                accent: '#FFD700',       // Gold accent
+                background: 'rgba(200, 255, 0, 0.1)',
+                grid: 'rgba(200, 255, 0, 0.1)'
+            },
+            dataUpdateThreshold: 3600000,
+            rowsPerPage: 50,
+            dataEndpoint: './data/data.json'
+        };
+    </script>
     <script src="js/auth.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/charts.js"></script>

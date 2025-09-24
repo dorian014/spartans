@@ -1,4 +1,28 @@
-// Authentication logic for X Account Analytics Dashboard
+// Authentication logic for Spartans X Account Analytics Dashboard
+
+// Global variable for password hash
+let AUTH_CONFIG = null;
+
+// Load authentication configuration
+async function loadAuthConfig() {
+    try {
+        const response = await fetch('./auth-hash.json');
+        if (response.ok) {
+            AUTH_CONFIG = await response.json();
+        } else {
+            // Fallback for local development
+            AUTH_CONFIG = {
+                password: '7a5f202b5352d5503125bef209a462fe60950ecdc8bc9df2e3b506fe44beca93' // adminspartans
+            };
+        }
+    } catch (error) {
+        // Fallback for local development
+        AUTH_CONFIG = {
+            password: '7a5f202b5352d5503125bef209a462fe60950ecdc8bc9df2e3b506fe44beca93' // adminspartans
+        };
+    }
+    return AUTH_CONFIG;
+}
 
 // SHA-256 hashing function
 async function sha256(message) {
@@ -30,7 +54,10 @@ if (window.location.pathname.endsWith('/') || window.location.pathname.includes(
 }
 
 // Handle login form submission
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', async function() {
+    // Load auth config on page load
+    await loadAuthConfig();
+
     const loginForm = document.getElementById('loginForm');
     const passwordInput = document.getElementById('password');
     const errorMessage = document.getElementById('errorMessage');
@@ -48,10 +75,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const password = passwordInput.value;
             const hashedPassword = await sha256(password);
 
+            // Ensure auth config is loaded
+            if (!AUTH_CONFIG) {
+                await loadAuthConfig();
+            }
+
             // Check against stored hash
             let authenticated = false;
 
-            if (hashedPassword === CONFIG.password) {
+            if (hashedPassword === AUTH_CONFIG.password) {
                 authenticated = true;
             }
 
