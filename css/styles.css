@@ -121,9 +121,9 @@ body {
 
 /* Spartans Logo Icons */
 .spartans-logo-icon {
-    width: 100px;
-    height: 100px;
-    margin-bottom: 1.5rem;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 2rem;
     filter: drop-shadow(0 0 20px rgba(233, 255, 0, 0.3));
     animation: pulse-glow 2s infinite;
 }
