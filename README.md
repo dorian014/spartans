@@ -95,4 +95,4 @@ Optimized for large-scale data processing:
 
 ---
 
-Built with ❤️ by **Qstarlabs Technology** for the Spartans project
+Built by **Qstarlabs Technology** for the Spartans project
