@@ -75,8 +75,8 @@
     align-items: center;
     gap: var(--spacing-sm);
     padding: var(--spacing-sm) var(--spacing-md);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-color);
+    background: rgba(0, 123, 141, 0.15);
+    border: 1px solid var(--accent-secondary);
     border-radius: var(--radius-md);
     color: var(--text-primary);
     font-size: 0.875rem;
@@ -86,7 +86,8 @@
 }
 
 .multi-select-toggle:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(0, 123, 141, 0.25);
+    border-color: var(--accent-primary);
 }
 
 .multi-select-dropdown {
@@ -169,8 +170,8 @@
 /* Date Range Select */
 .date-range-select {
     padding: var(--spacing-sm) var(--spacing-md);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--border-color);
+    background: rgba(0, 123, 141, 0.15);
+    border: 1px solid var(--accent-secondary);
     border-radius: var(--radius-md);
     color: var(--text-primary);
     font-size: 0.875rem;
@@ -180,7 +181,8 @@
 }
 
 .date-range-select:hover {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(0, 123, 141, 0.25);
+    border-color: var(--accent-primary);
 }
 
 /* Data Status */
