@@ -130,9 +130,9 @@
                             </svg>
                         </div>
                         <div class="stat-content">
-                            <h3 class="stat-label">Avg Posts/Day</h3>
+                            <h3 class="stat-label">Top 30 Posts/Day</h3>
                             <p class="stat-value" id="avgPostsPerDay">-</p>
-                            <p class="stat-change">per agent</p>
+                            <p class="stat-change">highest performers</p>
                         </div>
                     </div>
 
@@ -172,11 +172,10 @@
                     <div class="chart-container">
                         <div class="chart-header">
                             <h3>Posts by Agent</h3>
-                            <button class="chart-sort-btn" data-sort="desc">
+                            <button class="chart-sort-btn" data-sort="desc" title="Sort">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 3h18v18H3z"></path>
-                                    <path d="M8 12h8"></path>
-                                    <path d="M12 8v8"></path>
+                                    <path d="M7 10l5-5 5 5"></path>
+                                    <path d="M7 14l5 5 5-5"></path>
                                 </svg>
                             </button>
                         </div>
@@ -188,11 +187,10 @@
                     <div class="chart-container">
                         <div class="chart-header">
                             <h3>Impressions by Agent</h3>
-                            <button class="chart-sort-btn" data-sort="desc">
+                            <button class="chart-sort-btn" data-sort="desc" title="Sort">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 3h18v18H3z"></path>
-                                    <path d="M8 12h8"></path>
-                                    <path d="M12 8v8"></path>
+                                    <path d="M7 10l5-5 5 5"></path>
+                                    <path d="M7 14l5 5 5-5"></path>
                                 </svg>
                             </button>
                         </div>
@@ -342,7 +340,7 @@
                 grid: 'rgba(0, 123, 141, 0.1)'
             },
             dataUpdateThreshold: 3600000,
-            rowsPerPage: 50,
+            rowsPerPage: 20,
             dataEndpoint: './data/data.json'
         };
     </script>

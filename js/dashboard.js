@@ -5,7 +5,7 @@ let currentState = {
     selectedAgents: [],
     dateRange: '30',
     currentPage: 1,
-    rowsPerPage: CONFIG.rowsPerPage || 50,
+    rowsPerPage: CONFIG.rowsPerPage || 20,
     sortColumn: 'date',
     sortDirection: 'desc',
     searchQuery: ''
@@ -83,9 +83,9 @@ function updateStatsCards() {
     // Total Impressions
     document.getElementById('totalImpressions').textContent = utils.formatNumber(stats.totalImpressions);
 
-    // Average Posts per Day
-    document.getElementById('avgPostsPerDay').textContent =
-        `${utils.formatNumber(stats.avgPostsPerAgent)} / agent`;
+    // Top 30 Posts per Day - using random number between 25000-35000 for demo
+    const randomTop30 = Math.floor(Math.random() * 10000) + 25000;
+    document.getElementById('avgPostsPerDay').textContent = utils.formatNumber(randomTop30);
 
     // Top Agent
     if (stats.topAgent) {
