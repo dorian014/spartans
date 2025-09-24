@@ -783,9 +783,10 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(0, 41, 56, 0.1);
+    background: rgba(0, 41, 56, 0.5);
     border-radius: 5px;
     margin: 5px;
+    border: 1px solid rgba(0, 41, 56, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {

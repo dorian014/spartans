@@ -968,9 +968,10 @@
 }
 
 ::-webkit-scrollbar-track {
-    background: rgba(0, 41, 56, 0.1);
+    background: rgba(0, 41, 56, 0.5);
     border-radius: 5px;
     margin: 5px;
+    border: 1px solid rgba(0, 41, 56, 0.3);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -1011,8 +1012,9 @@ body::-webkit-scrollbar,
 body::-webkit-scrollbar-track,
 .table-wrapper::-webkit-scrollbar-track,
 .dropdown-content::-webkit-scrollbar-track {
-    background: rgba(0, 41, 56, 0.1);
+    background: rgba(0, 41, 56, 0.5);
     border-radius: 5px;
+    border: 1px solid rgba(0, 41, 56, 0.3);
 }
 
 body::-webkit-scrollbar-thumb,
