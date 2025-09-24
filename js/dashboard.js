@@ -104,8 +104,10 @@ function updateStatsCards() {
 
 // Update all charts
 function updateCharts() {
-    const metric = document.querySelector('.chart-toggle-btn.active').dataset.metric;
-    const sortOrder = document.querySelector('.chart-sort-btn').dataset.sort;
+    const activeBtn = document.querySelector('.chart-toggle-btn.active');
+    const metric = activeBtn ? activeBtn.dataset.metric : 'posts';
+    const sortBtn = document.querySelector('.chart-sort-btn');
+    const sortOrder = sortBtn ? sortBtn.dataset.sort : 'desc';
 
     if (typeof chartUtils !== 'undefined') {
         chartUtils.updateAllCharts(metric, sortOrder);
