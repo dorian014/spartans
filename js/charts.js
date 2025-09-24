@@ -352,11 +352,11 @@ function createGradient(ctx, color) {
     const gradient = canvas.createLinearGradient(0, 0, 0, 300);
 
     if (color === CONFIG.chartColors.primary) {
-        gradient.addColorStop(0, '#C8FF00');
-        gradient.addColorStop(1, '#8FB300');
+        gradient.addColorStop(0, '#E9ff00');
+        gradient.addColorStop(1, '#007b8d');
     } else if (color === CONFIG.chartColors.secondary) {
-        gradient.addColorStop(0, '#00FF41');
-        gradient.addColorStop(1, '#00B82E');
+        gradient.addColorStop(0, '#007b8d');
+        gradient.addColorStop(1, '#002938');
     } else {
         gradient.addColorStop(0, color);
         gradient.addColorStop(1, color);
