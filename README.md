@@ -91,7 +91,7 @@ Optimized for large-scale data processing:
 
 ## License
 
-© 2024 Qstarlabs Technology. All rights reserved.
+© 2025 Qstarlabs Technology. All rights reserved.
 
 ---
 
