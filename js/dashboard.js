@@ -14,7 +14,7 @@ let currentState = {
 // Initialize dashboard on load
 document.addEventListener('DOMContentLoaded', async function() {
     // Check authentication
-    if (!checkAuth()) {
+    if (!window.authUtils || !window.authUtils.checkAuth()) {
         window.location.href = 'index.html';
         return;
     }
@@ -32,7 +32,8 @@ async function initializeDashboard() {
         // Load data
         const success = await utils.DataManager.loadData();
         if (!success) {
-            showError('Failed to load dashboard data');
+            // Redirect to error page if data loading fails
+            window.location.href = 'error.html';
             return;
         }
 

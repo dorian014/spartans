@@ -95,13 +95,19 @@ document.addEventListener('DOMContentLoaded', async function() {
                 };
                 sessionStorage.setItem('auth', JSON.stringify(authData));
 
-                // Add success animation
+                // Show success transition overlay
+                const successOverlay = document.getElementById('successOverlay');
+                if (successOverlay) {
+                    successOverlay.classList.add('show');
+                }
+
+                // Add success animation to form
                 loginForm.classList.add('success');
 
-                // Redirect to dashboard
+                // Redirect to dashboard after transition
                 setTimeout(() => {
                     window.location.href = 'main.html';
-                }, 500);
+                }, 1800);
             } else {
                 // Show error
                 errorMessage.textContent = 'Invalid password. Please try again.';
