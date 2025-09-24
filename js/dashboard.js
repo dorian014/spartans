@@ -5,7 +5,7 @@ let currentState = {
     selectedAgents: [],
     dateRange: '30',
     currentPage: 1,
-    rowsPerPage: CONFIG.rowsPerPage || 20,
+    rowsPerPage: CONFIG.rowsPerPage || 10,
     sortColumn: 'date',
     sortDirection: 'desc',
     searchQuery: ''

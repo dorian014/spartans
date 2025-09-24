@@ -5,7 +5,7 @@
     "totalAgents": 5,
     "totalDays": 7,
     "totalPosts": 1450,
-    "totalImpressions": 215000
+    "totalImpressions": 245000
   },
   "records": [
     {
@@ -61,16 +61,16 @@
       "agent_id": "agent_002",
       "display_name": "Jennifer",
       "xHandle": "@jennifer_bot",
-      "posts": 1150,
-      "impressions": 115000
+      "posts": 41,
+      "impressions": 7800
     },
     {
       "date": "2025-09-23",
       "agent_id": "agent_003",
       "display_name": "David",
       "xHandle": "@david_tech",
-      "posts": 1300,
-      "impressions": 130000
+      "posts": 44,
+      "impressions": 8300
     },
     {
       "date": "2025-09-23",
@@ -85,56 +85,56 @@
       "agent_id": "agent_005",
       "display_name": "James",
       "xHandle": "@james_data",
-      "posts": 1300,
-      "impressions": 130000
+      "posts": 44,
+      "impressions": 8300
     },
     {
       "date": "2025-09-22",
       "agent_id": "agent_001",
       "display_name": "Michael",
       "xHandle": "@michael_ai",
-      "posts": 1180,
-      "impressions": 118000
+      "posts": 39,
+      "impressions": 7500
     },
     {
       "date": "2025-09-22",
       "agent_id": "agent_002",
       "display_name": "Jennifer",
       "xHandle": "@jennifer_bot",
-      "posts": 1120,
-      "impressions": 112000
+      "posts": 37,
+      "impressions": 6900
     },
     {
       "date": "2025-09-22",
       "agent_id": "agent_003",
       "display_name": "David",
       "xHandle": "@david_tech",
-      "posts": 1280,
-      "impressions": 128000
+      "posts": 43,
+      "impressions": 8700
     },
     {
       "date": "2025-09-22",
       "agent_id": "agent_004",
       "display_name": "Sarah",
       "xHandle": "@sarah_ml",
-      "posts": 1220,
-      "impressions": 122000
+      "posts": 40,
+      "impressions": 7600
     },
     {
       "date": "2025-09-22",
       "agent_id": "agent_005",
       "display_name": "James",
       "xHandle": "@james_data",
-      "posts": 1320,
-      "impressions": 132000
+      "posts": 46,
+      "impressions": 9200
     },
     {
       "date": "2025-09-21",
       "agent_id": "agent_001",
       "display_name": "Michael",
       "xHandle": "@michael_ai",
-      "posts": 1150,
-      "impressions": 115000
+      "posts": 41,
+      "impressions": 7800
     },
     {
       "date": "2025-09-21",
@@ -165,128 +165,128 @@
       "agent_id": "agent_005",
       "display_name": "James",
       "xHandle": "@james_data",
-      "posts": 1300,
-      "impressions": 130000
+      "posts": 44,
+      "impressions": 8300
     },
     {
       "date": "2025-09-20",
       "agent_id": "agent_001",
       "display_name": "Michael",
       "xHandle": "@michael_ai",
-      "posts": 1170,
-      "impressions": 117000
+      "posts": 38,
+      "impressions": 7400
     },
     {
       "date": "2025-09-20",
       "agent_id": "agent_002",
       "display_name": "Jennifer",
       "xHandle": "@jennifer_bot",
-      "posts": 1080,
-      "impressions": 108000
+      "posts": 36,
+      "impressions": 6700
     },
     {
       "date": "2025-09-20",
       "agent_id": "agent_003",
       "display_name": "David",
       "xHandle": "@david_tech",
-      "posts": 1270,
-      "impressions": 127000
+      "posts": 42,
+      "impressions": 8400
     },
     {
       "date": "2025-09-20",
       "agent_id": "agent_004",
       "display_name": "Sarah",
       "xHandle": "@sarah_ml",
-      "posts": 1180,
-      "impressions": 118000
+      "posts": 39,
+      "impressions": 7500
     },
     {
       "date": "2025-09-20",
       "agent_id": "agent_005",
       "display_name": "James",
       "xHandle": "@james_data",
-      "posts": 1280,
-      "impressions": 128000
+      "posts": 43,
+      "impressions": 8700
     },
     {
       "date": "2025-09-19",
       "agent_id": "agent_001",
       "display_name": "Michael",
       "xHandle": "@michael_ai",
-      "posts": 1160,
-      "impressions": 116000
+      "posts": 39,
+      "impressions": 7300
     },
     {
       "date": "2025-09-19",
       "agent_id": "agent_002",
       "display_name": "Jennifer",
       "xHandle": "@jennifer_bot",
-      "posts": 1090,
-      "impressions": 109000
+      "posts": 37,
+      "impressions": 6900
     },
     {
       "date": "2025-09-19",
       "agent_id": "agent_003",
       "display_name": "David",
       "xHandle": "@david_tech",
-      "posts": 1260,
-      "impressions": 126000
+      "posts": 41,
+      "impressions": 8200
     },
     {
       "date": "2025-09-19",
       "agent_id": "agent_004",
       "display_name": "Sarah",
       "xHandle": "@sarah_ml",
-      "posts": 1190,
-      "impressions": 119000
+      "posts": 40,
+      "impressions": 7800
     },
     {
       "date": "2025-09-19",
       "agent_id": "agent_005",
       "display_name": "James",
       "xHandle": "@james_data",
-      "posts": 1290,
-      "impressions": 129000
+      "posts": 43,
+      "impressions": 8600
     },
     {
       "date": "2025-09-18",
       "agent_id": "agent_001",
       "display_name": "Michael",
       "xHandle": "@michael_ai",
-      "posts": 1140,
-      "impressions": 114000
+      "posts": 38,
+      "impressions": 7100
     },
     {
       "date": "2025-09-18",
       "agent_id": "agent_002",
       "display_name": "Jennifer",
       "xHandle": "@jennifer_bot",
-      "posts": 1070,
-      "impressions": 107000
+      "posts": 35,
+      "impressions": 6600
     },
     {
       "date": "2025-09-18",
       "agent_id": "agent_003",
       "display_name": "David",
       "xHandle": "@david_tech",
-      "posts": 1240,
-      "impressions": 124000
+      "posts": 41,
+      "impressions": 8000
     },
     {
       "date": "2025-09-18",
       "agent_id": "agent_004",
       "display_name": "Sarah",
       "xHandle": "@sarah_ml",
-      "posts": 1170,
-      "impressions": 117000
+      "posts": 38,
+      "impressions": 7400
     },
     {
       "date": "2025-09-18",
       "agent_id": "agent_005",
       "display_name": "James",
       "xHandle": "@james_data",
-      "posts": 1270,
-      "impressions": 127000
+      "posts": 42,
+      "impressions": 8400
     }
   ]
 }
