@@ -93,6 +93,7 @@ const DataManager = {
                 totalImpressions: 0,
                 avgPostsPerDay: 0,
                 avgImpressionsPerDay: 0,
+                avgPostsPerAgent: 0,
                 topAgent: null,
                 uniqueDays: 0,
                 uniqueAgents: 0
@@ -240,6 +241,9 @@ const DataManager = {
 
 // Formatting utilities
 function formatNumber(num) {
+    if (num === undefined || num === null) {
+        return '0';
+    }
     if (num >= 1000000) {
         return (num / 1000000).toFixed(1) + 'M';
     } else if (num >= 1000) {
