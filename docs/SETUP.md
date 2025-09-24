@@ -17,7 +17,11 @@ Configure these secrets in your GitHub repository (Settings → Secrets and vari
 
 3. **GCS_BUCKET_NAME**: Google Cloud Storage bucket name
    - Example: `my-analytics-bucket`
-   - The workflow expects data at: `gs://[bucket]/x-analytics/data.json`
+   - The workflow expects daily files at: `gs://[bucket]/spartans/daily/`
+
+4. **SPARTANS_PASSWORD**: Dashboard access password
+   - Set your desired password as the secret value
+   - The workflow will generate the hash automatically
 
 ### GitHub Pages Setup
 
@@ -31,7 +35,7 @@ The dashboard will be available at:
 
 ### Data Update Schedule
 
-The GitHub Action runs hourly to fetch the latest data from GCS. You can also manually trigger it from the Actions tab.
+The GitHub Action runs daily at 2 AM UTC to fetch and aggregate data from GCS. You can also manually trigger it from the Actions tab.
 
 ## Local Development
 
@@ -41,9 +45,6 @@ The GitHub Action runs hourly to fetch the latest data from GCS. You can also ma
    ```
 
 2. Open: `http://localhost:8000/`
-
-3. Default password (SHA-256 hashed):
-   - Password: `adminspartans`
 
 ## Data Format
 
@@ -74,7 +75,7 @@ The `data/data.json` file should follow this structure:
 
 ## Security Notes
 
-1. **Never commit real passwords** - The config.js contains hashed passwords
+1. **Authentication is handled securely** via GitHub Actions
 2. **Use environment-specific configs** for production
 3. **Restrict GCS bucket access** to the service account only
 4. **Enable GitHub Pages access restrictions** if needed (GitHub Pro/Enterprise)

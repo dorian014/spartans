@@ -43,11 +43,6 @@ The Spartans Dashboard is a high-performance analytics platform designed to trac
    http://localhost:8000/
    ```
 
-4. Login with the password:
-   ```
-   adminspartans
-   ```
-
 ## Technology Stack
 
 - **Frontend**: Vanilla JavaScript, HTML5, CSS3

@@ -12,13 +12,13 @@ async function loadAuthConfig() {
         } else {
             // Fallback for local development
             AUTH_CONFIG = {
-                password: '7a5f202b5352d5503125bef209a462fe60950ecdc8bc9df2e3b506fe44beca93' // adminspartans
+                password: '7a5f202b5352d5503125bef209a462fe60950ecdc8bc9df2e3b506fe44beca93' // fallback hash
             };
         }
     } catch (error) {
         // Fallback for local development
         AUTH_CONFIG = {
-            password: '7a5f202b5352d5503125bef209a462fe60950ecdc8bc9df2e3b506fe44beca93' // adminspartans
+            password: '7a5f202b5352d5503125bef209a462fe60950ecdc8bc9df2e3b506fe44beca93' // fallback hash
         };
     }
     return AUTH_CONFIG;
