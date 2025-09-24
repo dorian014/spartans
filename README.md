@@ -1,15 +1,103 @@
-# Spartans Dashboard
+# Spartans - X Account Analytics Dashboard
 
-A dashboard application for [project description to be added].
+A comprehensive analytics dashboard for monitoring X (Twitter) account performance metrics.
 
-## Getting Started
+**Developed by Qstarlabs Technology**
 
-Details coming soon...
+## Overview
 
-## Technologies
+The Spartans Dashboard is a high-performance analytics platform designed to track and visualize social media metrics for hundreds of X (Twitter) accounts. Built to handle over 300 agents generating 400,000+ daily posts, this dashboard provides real-time insights into engagement metrics, performance trends, and comprehensive data analysis.
 
-To be determined based on requirements.
+## Features
+
+- 🔒 **Secure Authentication**: SHA-256 encrypted password protection
+- 🌙 **Dark Theme UI**: Modern glassmorphism design for optimal viewing
+- 📊 **Interactive Visualizations**: Real-time charts powered by Chart.js
+- 📈 **Performance Metrics**: Track posts, impressions, and engagement rates
+- 🔍 **Advanced Filtering**: Multi-select agent filtering and date range selection
+- 📱 **Responsive Design**: Optimized for desktop and tablet viewing
+- 📥 **Data Export**: CSV export functionality for detailed analysis
+- ⚡ **High Performance**: Optimized to handle 400k+ daily posts
+
+## Quick Start
+
+### Local Development
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/dorian014/spartans.git
+   cd spartans
+   ```
+
+2. Start the local server:
+   ```bash
+   ./test-local.sh
+   ```
+   Or manually:
+   ```bash
+   python3 -m http.server 8000
+   ```
+
+3. Open your browser and navigate to:
+   ```
+   http://localhost:8000/
+   ```
+
+4. Login with the password:
+   ```
+   adminspartans
+   ```
+
+## Technology Stack
+
+- **Frontend**: Vanilla JavaScript, HTML5, CSS3
+- **Charts**: Chart.js v4.4.0
+- **Authentication**: SHA-256 client-side hashing
+- **Deployment**: GitHub Pages with GitHub Actions
+- **Data Storage**: JSON with Google Cloud Storage integration
+
+## Dashboard Components
+
+### Key Metrics
+- Total Posts & Impressions
+- Average Posts per Day/Agent
+- Top Performing Agents
+- Real-time Data Status
+
+### Visualizations
+- Performance Timeline (Line Chart)
+- Posts by Agent (Bar Chart)
+- Impressions by Agent (Bar Chart)
+- Interactive filters for custom analysis
+
+### Data Management
+- Sortable and searchable data table
+- Pagination for large datasets
+- CSV export for external analysis
+
+## Deployment
+
+The dashboard automatically deploys to GitHub Pages on every push to the main branch. Data updates are scheduled hourly through GitHub Actions, fetching the latest metrics from Google Cloud Storage.
+
+## Security
+
+- Client-side password hashing using SHA-256
+- Session-based authentication with 1-hour timeout
+- No sensitive data stored in browser localStorage
+- All data transmission over HTTPS
+
+## Performance
+
+Optimized for large-scale data processing:
+- Handles 300+ agents
+- Processes 400,000+ daily posts
+- Real-time filtering and aggregation
+- Efficient pagination for data tables
 
 ## License
 
-TBD
+© 2024 Qstarlabs Technology. All rights reserved.
+
+---
+
+Built with ❤️ by **Qstarlabs Technology** for the Spartans project

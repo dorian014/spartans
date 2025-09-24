@@ -19,12 +19,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         return;
     }
 
-    // Set access mode visibility
-    const accessMode = sessionStorage.getItem('accessMode');
-    if (accessMode === 'gdc') {
-        document.getElementById('leaderboardSection').style.display = 'block';
-    }
-
     // Initialize components
     await initializeDashboard();
     setupEventListeners();
@@ -72,10 +66,6 @@ function updateDashboard() {
     updateStatsCards();
     updateCharts();
     updateDataTable();
-
-    if (sessionStorage.getItem('accessMode') === 'gdc') {
-        updateLeaderboard();
-    }
 }
 
 // Update statistics cards
@@ -212,29 +202,6 @@ function updatePaginationControls(totalPages) {
         }
         return `<button class="page-btn ${page === currentState.currentPage ? 'active' : ''}" data-page="${page}">${page}</button>`;
     }).join('');
-}
-
-// Update leaderboard (GDC mode)
-function updateLeaderboard() {
-    const leaderboard = utils.DataManager.getLeaderboard();
-    const container = document.getElementById('leaderboard');
-
-    container.innerHTML = `
-        <div class="leaderboard-grid">
-            ${leaderboard.map((agent, index) => `
-                <div class="leaderboard-item">
-                    <div class="rank">#${agent.rank}</div>
-                    <div class="agent-info">
-                        <div class="agent-name">${agent.name}</div>
-                        <div class="agent-stats">
-                            <span>${utils.formatNumber(agent.posts)} posts</span>
-                            <span>${utils.formatNumber(agent.impressions)} impressions</span>
-                        </div>
-                    </div>
-                </div>
-            `).join('')}
-        </div>
-    `;
 }
 
 // Populate agent filter dropdown
@@ -424,8 +391,12 @@ function showError(message) {
 
 // Check authentication
 function checkAuth() {
-    const isAuthenticated = sessionStorage.getItem('authenticated');
-    return isAuthenticated === 'true';
+    const authData = sessionStorage.getItem('auth');
+    if (authData) {
+        const auth = JSON.parse(authData);
+        return auth.authenticated && auth.timestamp > Date.now() - 3600000; // 1 hour session
+    }
+    return false;
 }
 
 // Auto-refresh data every hour

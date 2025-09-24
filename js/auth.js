@@ -22,7 +22,7 @@ function checkAuth() {
 }
 
 // Redirect to dashboard if already authenticated
-if (window.location.pathname.includes('login.html')) {
+if (window.location.pathname.endsWith('/') || window.location.pathname.includes('index.html')) {
     const auth = checkAuth();
     if (auth) {
         window.location.href = 'main.html';
@@ -48,23 +48,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const password = passwordInput.value;
             const hashedPassword = await sha256(password);
 
-            // Check against stored hashes
+            // Check against stored hash
             let authenticated = false;
-            let accessMode = null;
 
-            if (hashedPassword === CONFIG.passwords.admin) {
+            if (hashedPassword === CONFIG.password) {
                 authenticated = true;
-                accessMode = 'admin';
-            } else if (hashedPassword === CONFIG.passwords.gdc) {
-                authenticated = true;
-                accessMode = 'gdc';
             }
 
             if (authenticated) {
                 // Store authentication in session
                 const authData = {
                     authenticated: true,
-                    accessMode: accessMode,
                     timestamp: Date.now()
                 };
                 sessionStorage.setItem('auth', JSON.stringify(authData));
