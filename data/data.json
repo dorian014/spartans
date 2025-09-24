@@ -1,0 +1,292 @@
+{
+  "lastUpdated": "2024-09-24T12:00:00Z",
+  "dataVersion": "1.0",
+  "summary": {
+    "totalAgents": 5,
+    "totalDays": 7,
+    "totalPosts": 43750,
+    "totalImpressions": 4375000
+  },
+  "records": [
+    {
+      "date": "2024-09-24",
+      "agent_id": "agent_001",
+      "display_name": "Alpha Agent",
+      "xHandle": "@alphaagent",
+      "posts": 1250,
+      "impressions": 125000
+    },
+    {
+      "date": "2024-09-24",
+      "agent_id": "agent_002",
+      "display_name": "Beta Agent",
+      "xHandle": "@betaagent",
+      "posts": 1100,
+      "impressions": 110000
+    },
+    {
+      "date": "2024-09-24",
+      "agent_id": "agent_003",
+      "display_name": "Gamma Agent",
+      "xHandle": "@gammaagent",
+      "posts": 1350,
+      "impressions": 135000
+    },
+    {
+      "date": "2024-09-24",
+      "agent_id": "agent_004",
+      "display_name": "Delta Agent",
+      "xHandle": "@deltaagent",
+      "posts": 1200,
+      "impressions": 120000
+    },
+    {
+      "date": "2024-09-24",
+      "agent_id": "agent_005",
+      "display_name": "Epsilon Agent",
+      "xHandle": "@epsilonagent",
+      "posts": 1350,
+      "impressions": 135000
+    },
+    {
+      "date": "2024-09-23",
+      "agent_id": "agent_001",
+      "display_name": "Alpha Agent",
+      "xHandle": "@alphaagent",
+      "posts": 1200,
+      "impressions": 120000
+    },
+    {
+      "date": "2024-09-23",
+      "agent_id": "agent_002",
+      "display_name": "Beta Agent",
+      "xHandle": "@betaagent",
+      "posts": 1150,
+      "impressions": 115000
+    },
+    {
+      "date": "2024-09-23",
+      "agent_id": "agent_003",
+      "display_name": "Gamma Agent",
+      "xHandle": "@gammaagent",
+      "posts": 1300,
+      "impressions": 130000
+    },
+    {
+      "date": "2024-09-23",
+      "agent_id": "agent_004",
+      "display_name": "Delta Agent",
+      "xHandle": "@deltaagent",
+      "posts": 1250,
+      "impressions": 125000
+    },
+    {
+      "date": "2024-09-23",
+      "agent_id": "agent_005",
+      "display_name": "Epsilon Agent",
+      "xHandle": "@epsilonagent",
+      "posts": 1300,
+      "impressions": 130000
+    },
+    {
+      "date": "2024-09-22",
+      "agent_id": "agent_001",
+      "display_name": "Alpha Agent",
+      "xHandle": "@alphaagent",
+      "posts": 1180,
+      "impressions": 118000
+    },
+    {
+      "date": "2024-09-22",
+      "agent_id": "agent_002",
+      "display_name": "Beta Agent",
+      "xHandle": "@betaagent",
+      "posts": 1120,
+      "impressions": 112000
+    },
+    {
+      "date": "2024-09-22",
+      "agent_id": "agent_003",
+      "display_name": "Gamma Agent",
+      "xHandle": "@gammaagent",
+      "posts": 1280,
+      "impressions": 128000
+    },
+    {
+      "date": "2024-09-22",
+      "agent_id": "agent_004",
+      "display_name": "Delta Agent",
+      "xHandle": "@deltaagent",
+      "posts": 1220,
+      "impressions": 122000
+    },
+    {
+      "date": "2024-09-22",
+      "agent_id": "agent_005",
+      "display_name": "Epsilon Agent",
+      "xHandle": "@epsilonagent",
+      "posts": 1320,
+      "impressions": 132000
+    },
+    {
+      "date": "2024-09-21",
+      "agent_id": "agent_001",
+      "display_name": "Alpha Agent",
+      "xHandle": "@alphaagent",
+      "posts": 1150,
+      "impressions": 115000
+    },
+    {
+      "date": "2024-09-21",
+      "agent_id": "agent_002",
+      "display_name": "Beta Agent",
+      "xHandle": "@betaagent",
+      "posts": 1100,
+      "impressions": 110000
+    },
+    {
+      "date": "2024-09-21",
+      "agent_id": "agent_003",
+      "display_name": "Gamma Agent",
+      "xHandle": "@gammaagent",
+      "posts": 1250,
+      "impressions": 125000
+    },
+    {
+      "date": "2024-09-21",
+      "agent_id": "agent_004",
+      "display_name": "Delta Agent",
+      "xHandle": "@deltaagent",
+      "posts": 1200,
+      "impressions": 120000
+    },
+    {
+      "date": "2024-09-21",
+      "agent_id": "agent_005",
+      "display_name": "Epsilon Agent",
+      "xHandle": "@epsilonagent",
+      "posts": 1300,
+      "impressions": 130000
+    },
+    {
+      "date": "2024-09-20",
+      "agent_id": "agent_001",
+      "display_name": "Alpha Agent",
+      "xHandle": "@alphaagent",
+      "posts": 1170,
+      "impressions": 117000
+    },
+    {
+      "date": "2024-09-20",
+      "agent_id": "agent_002",
+      "display_name": "Beta Agent",
+      "xHandle": "@betaagent",
+      "posts": 1080,
+      "impressions": 108000
+    },
+    {
+      "date": "2024-09-20",
+      "agent_id": "agent_003",
+      "display_name": "Gamma Agent",
+      "xHandle": "@gammaagent",
+      "posts": 1270,
+      "impressions": 127000
+    },
+    {
+      "date": "2024-09-20",
+      "agent_id": "agent_004",
+      "display_name": "Delta Agent",
+      "xHandle": "@deltaagent",
+      "posts": 1180,
+      "impressions": 118000
+    },
+    {
+      "date": "2024-09-20",
+      "agent_id": "agent_005",
+      "display_name": "Epsilon Agent",
+      "xHandle": "@epsilonagent",
+      "posts": 1280,
+      "impressions": 128000
+    },
+    {
+      "date": "2024-09-19",
+      "agent_id": "agent_001",
+      "display_name": "Alpha Agent",
+      "xHandle": "@alphaagent",
+      "posts": 1160,
+      "impressions": 116000
+    },
+    {
+      "date": "2024-09-19",
+      "agent_id": "agent_002",
+      "display_name": "Beta Agent",
+      "xHandle": "@betaagent",
+      "posts": 1090,
+      "impressions": 109000
+    },
+    {
+      "date": "2024-09-19",
+      "agent_id": "agent_003",
+      "display_name": "Gamma Agent",
+      "xHandle": "@gammaagent",
+      "posts": 1260,
+      "impressions": 126000
+    },
+    {
+      "date": "2024-09-19",
+      "agent_id": "agent_004",
+      "display_name": "Delta Agent",
+      "xHandle": "@deltaagent",
+      "posts": 1190,
+      "impressions": 119000
+    },
+    {
+      "date": "2024-09-19",
+      "agent_id": "agent_005",
+      "display_name": "Epsilon Agent",
+      "xHandle": "@epsilonagent",
+      "posts": 1290,
+      "impressions": 129000
+    },
+    {
+      "date": "2024-09-18",
+      "agent_id": "agent_001",
+      "display_name": "Alpha Agent",
+      "xHandle": "@alphaagent",
+      "posts": 1140,
+      "impressions": 114000
+    },
+    {
+      "date": "2024-09-18",
+      "agent_id": "agent_002",
+      "display_name": "Beta Agent",
+      "xHandle": "@betaagent",
+      "posts": 1070,
+      "impressions": 107000
+    },
+    {
+      "date": "2024-09-18",
+      "agent_id": "agent_003",
+      "display_name": "Gamma Agent",
+      "xHandle": "@gammaagent",
+      "posts": 1240,
+      "impressions": 124000
+    },
+    {
+      "date": "2024-09-18",
+      "agent_id": "agent_004",
+      "display_name": "Delta Agent",
+      "xHandle": "@deltaagent",
+      "posts": 1170,
+      "impressions": 117000
+    },
+    {
+      "date": "2024-09-18",
+      "agent_id": "agent_005",
+      "display_name": "Epsilon Agent",
+      "xHandle": "@epsilonagent",
+      "posts": 1270,
+      "impressions": 127000
+    }
+  ]
+}
