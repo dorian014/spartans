@@ -1,0 +1,99 @@
+name: 📈 Fetch Daily Agent Data
+
+run-name: ${{ github.event_name == 'schedule' && '⏰ Scheduled daily data fetch' || github.event_name == 'workflow_dispatch' && '🔄 Manual data fetch by @' + github.actor || '🚀 Data fetch after workflow update' }}
+
+on:
+  schedule:
+    # Run daily at 2 AM UTC to fetch previous day's data
+    - cron: '0 2 * * *'
+  workflow_dispatch:  # Allows manual trigger from GitHub UI
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/fetch-daily-data.yml'
+      - 'scripts/aggregate-data.js'
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-daily:
+    name: ${{ github.event_name == 'schedule' && '⏰ Scheduled daily data fetch' || github.event_name == 'workflow_dispatch' && '🔄 Manual data fetch' || '🚀 Fetch triggered by push' }}
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout repository
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: 🔧 Setup Node.js environment
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: ☁️ Setup Google Cloud SDK
+      uses: google-github-actions/setup-gcloud@v1
+      with:
+        service_account_key: ${{ secrets.GCP_SA_KEY }}
+        project_id: ${{ secrets.GCP_PROJECT_ID }}
+
+    - name: 📅 Calculate date range
+      id: dates
+      run: |
+        # Get yesterday's date
+        YESTERDAY=$(date -d yesterday +'%Y-%m-%d')
+        echo "yesterday=$YESTERDAY" >> $GITHUB_OUTPUT
+
+        # Get date from 30 days ago for cleanup
+        THIRTY_DAYS_AGO=$(date -d '30 days ago' +'%Y-%m-%d')
+        echo "thirty_days_ago=$THIRTY_DAYS_AGO" >> $GITHUB_OUTPUT
+
+        echo "📊 Fetching data for: $YESTERDAY"
+
+    - name: 🔄 Fetch yesterday's data from GCS
+      env:
+        BUCKET: ${{ secrets.GCS_BUCKET_NAME }}
+      run: |
+        # Create daily_data directory if it doesn't exist
+        mkdir -p daily_data
+
+        # Download yesterday's data file
+        # Assuming the file naming convention is: spartans-data-YYYY-MM-DD.json
+        gsutil cp gs://${BUCKET}/spartans/daily/spartans-data-${{ steps.dates.outputs.yesterday }}.json \
+                  daily_data/${{ steps.dates.outputs.yesterday }}.json || {
+          echo "⚠️ No data file found for ${{ steps.dates.outputs.yesterday }}"
+          echo "Creating placeholder file..."
+          echo '{"date":"${{ steps.dates.outputs.yesterday }}","records":[]}' > daily_data/${{ steps.dates.outputs.yesterday }}.json
+        }
+
+    - name: 📊 Aggregate all daily data into dashboard format
+      run: |
+        node scripts/aggregate-data.js
+
+    - name: 🧹 Clean up old daily files (keep last 30 days)
+      run: |
+        # Remove daily files older than 30 days
+        find daily_data -name "*.json" -type f -mtime +30 -delete 2>/dev/null || true
+
+        # Also clean up files with dates older than 30 days based on filename
+        for file in daily_data/*.json; do
+          if [ -f "$file" ]; then
+            filename=$(basename "$file" .json)
+            if [[ "$filename" < "${{ steps.dates.outputs.thirty_days_ago }}" ]]; then
+              rm "$file"
+              echo "Removed old file: $file"
+            fi
+          fi
+        done
+
+    - name: 💾 Commit and push updated data to repository
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git pull origin main
+        git add daily_data/*.json data/data.json
+        git diff --quiet && git diff --staged --quiet || {
+          git commit -m "📊 Update Spartans data - daily fetch for $(date -d yesterday +'%Y-%m-%d') [skip ci]"
+          git push
+        }

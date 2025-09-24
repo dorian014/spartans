@@ -1,0 +1,22 @@
+{
+  "date": "2024-09-24",
+  "generated": "2024-09-25T02:00:00Z",
+  "records": [
+    {
+      "date": "2024-09-24",
+      "agent_id": "agent_001",
+      "display_name": "Alpha Agent",
+      "xHandle": "@alphaagent",
+      "posts": 1250,
+      "impressions": 125000
+    },
+    {
+      "date": "2024-09-24",
+      "agent_id": "agent_002",
+      "display_name": "Beta Agent",
+      "xHandle": "@betaagent",
+      "posts": 1100,
+      "impressions": 110000
+    }
+  ]
+}
