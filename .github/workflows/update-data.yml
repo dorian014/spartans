@@ -1,43 +1,50 @@
-name: Update Dashboard Data
+name: 📊 Update Dashboard Data
+
+run-name: ${{ github.event_name == 'schedule' && '⏰ Scheduled hourly data sync' || github.event_name == 'workflow_dispatch' && '🔄 Manual data sync by @' + github.actor || '📊 Data update' }}
 
 on:
   schedule:
     # Run every hour
     - cron: '0 * * * *'
   workflow_dispatch:  # Allow manual trigger
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/update-data.yml'
 
 jobs:
   update-data:
+    name: ${{ github.event_name == 'schedule' && '⏰ Hourly sync from GCS' || github.event_name == 'workflow_dispatch' && '🔄 Manual sync requested' || '📊 Sync triggered by push' }}
     runs-on: ubuntu-latest
 
     permissions:
       contents: write
 
     steps:
-      - name: Checkout repository
+      - name: 📥 Checkout repository
         uses: actions/checkout@v3
 
-      - name: Setup Google Cloud SDK
+      - name: ☁️ Setup Google Cloud SDK
         uses: google-github-actions/setup-gcloud@v1
         with:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
-      - name: Download data from GCS
+      - name: 📦 Download data from GCS
         run: |
           # Download the latest data.json from Google Cloud Storage
           gsutil cp gs://${{ secrets.GCS_BUCKET_NAME }}/x-analytics/data.json data/data.json
 
-      - name: Check for changes
+      - name: 🔍 Check for changes
         id: check
         run: |
           git diff --quiet data/data.json || echo "changed=true" >> $GITHUB_OUTPUT
 
-      - name: Commit and push if changed
+      - name: 💾 Commit and push if changed
         if: steps.check.outputs.changed == 'true'
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
           git add data/data.json
-          git commit -m "Update dashboard data [skip ci]"
+          git commit -m "📊 Update dashboard data - $(date +'%Y-%m-%d %H:%M') UTC [skip ci]"
           git push
