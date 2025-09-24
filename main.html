@@ -7,10 +7,23 @@
     <link rel="icon" type="image/png" href="assets/logo_small.png">
     <link rel="shortcut icon" type="image/png" href="assets/logo_small.png">
     <link rel="apple-touch-icon" href="assets/logo_small.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
 <body class="dashboard">
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <div class="bg-circle bg-circle-1"></div>
+        <div class="bg-circle bg-circle-2"></div>
+        <div class="bg-circle bg-circle-3"></div>
+        <div class="bg-hexagon bg-hexagon-1"></div>
+        <div class="bg-hexagon bg-hexagon-2"></div>
+        <div class="bg-grid"></div>
+    </div>
+
     <!-- Header -->
     <header class="dashboard-header">
         <div class="header-container">
@@ -21,18 +34,15 @@
             <div class="header-center">
                 <div class="filter-section">
                     <div class="filter-group">
-                        <label>Agents</label>
+                        <label>Micro-Influencers</label>
                         <div class="multi-select-wrapper">
                             <button id="agentFilterBtn" class="multi-select-toggle">
-                                <span id="selectedAgentsText">All Agents</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="6 9 12 15 18 9"></polyline>
-                                </svg>
+                                <span id="selectedAgentsText">ALL MICRO-INFLUENCERS</span>
                             </button>
                             <div id="agentDropdown" class="multi-select-dropdown">
                                 <div class="dropdown-header">
-                                    <button id="selectAllAgents" class="select-all-btn">Select All</button>
-                                    <button id="clearAllAgents" class="clear-all-btn">Clear All</button>
+                                    <button id="selectAllAgents" class="select-all-btn">SELECT ALL</button>
+                                    <button id="clearAllAgents" class="clear-all-btn">CLEAR ALL</button>
                                 </div>
                                 <div id="agentsList" class="dropdown-list">
                                     <!-- Agent checkboxes will be populated here -->
@@ -42,13 +52,36 @@
                     </div>
 
                     <div class="filter-group">
-                        <label for="dateRange">Date Range</label>
-                        <select id="dateRange" class="date-range-select">
-                            <option value="7">Last 7 days</option>
-                            <option value="30" selected>Last 30 days</option>
-                            <option value="90">Last 90 days</option>
-                            <option value="all">All time</option>
-                        </select>
+                        <label>Date Range</label>
+                        <div class="date-range-wrapper">
+                            <button id="dateRangeBtn" class="date-range-toggle">
+                                <span id="selectedDateRangeText">LAST 7 DAYS</span>
+                            </button>
+                            <div id="dateRangeDropdown" class="date-range-dropdown">
+                                <div class="date-range-list">
+                                    <label class="date-range-option" data-value="1">
+                                        <input type="radio" name="dateRange" value="1">
+                                        <span>YESTERDAY</span>
+                                    </label>
+                                    <label class="date-range-option" data-value="7">
+                                        <input type="radio" name="dateRange" value="7" checked>
+                                        <span>LAST 7 DAYS</span>
+                                    </label>
+                                    <label class="date-range-option" data-value="30">
+                                        <input type="radio" name="dateRange" value="30">
+                                        <span>LAST 30 DAYS</span>
+                                    </label>
+                                    <label class="date-range-option" data-value="90">
+                                        <input type="radio" name="dateRange" value="90">
+                                        <span>LAST 90 DAYS</span>
+                                    </label>
+                                    <label class="date-range-option" data-value="all">
+                                        <input type="radio" name="dateRange" value="all">
+                                        <span>ALL TIME</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -89,14 +122,14 @@
                 <div class="stats-grid">
                     <div class="stat-card">
                         <div class="stat-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path>
-                                <polyline points="7 10 12 15 17 10"></polyline>
-                                <line x1="12" y1="15" x2="12" y2="3"></line>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="3" y="14" width="6" height="8" rx="1"/>
+                                <rect x="9" y="8" width="6" height="14" rx="1"/>
+                                <rect x="15" y="4" width="6" height="18" rx="1"/>
                             </svg>
                         </div>
                         <div class="stat-content">
-                            <h3 class="stat-label">Total Posts</h3>
+                            <h3 class="stat-label">TOTAL POSTS</h3>
                             <p class="stat-value" id="totalPosts">-</p>
                             <p class="stat-change" id="postsChange">-</p>
                         </div>
@@ -104,13 +137,12 @@
 
                     <div class="stat-card">
                         <div class="stat-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                <circle cx="12" cy="12" r="3"></circle>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/>
                             </svg>
                         </div>
                         <div class="stat-content">
-                            <h3 class="stat-label">Total Impressions</h3>
+                            <h3 class="stat-label">TOTAL IMPRESSIONS</h3>
                             <p class="stat-value" id="totalImpressions">-</p>
                             <p class="stat-change" id="impressionsChange">-</p>
                         </div>
@@ -118,33 +150,25 @@
 
                     <div class="stat-card">
                         <div class="stat-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="12" y1="2" x2="12" y2="6"></line>
-                                <line x1="12" y1="18" x2="12" y2="22"></line>
-                                <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
-                                <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
-                                <line x1="2" y1="12" x2="6" y2="12"></line>
-                                <line x1="18" y1="12" x2="22" y2="12"></line>
-                                <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
-                                <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6z"/>
                             </svg>
                         </div>
                         <div class="stat-content">
-                            <h3 class="stat-label">Top 30 Posts/Day</h3>
+                            <h3 class="stat-label">AVG POSTS/DAY</h3>
                             <p class="stat-value" id="avgPostsPerDay">-</p>
-                            <p class="stat-change">highest performers</p>
+                            <p class="stat-change">ACROSS ALL MICRO-INFLUENCERS</p>
                         </div>
                     </div>
 
                     <div class="stat-card">
                         <div class="stat-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="8" r="7"></circle>
-                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
                             </svg>
                         </div>
                         <div class="stat-content">
-                            <h3 class="stat-label">Top Agent</h3>
+                            <h3 class="stat-label">TOP MICRO-INFLUENCER</h3>
                             <p class="stat-value" id="topAgent">-</p>
                             <p class="stat-change" id="topAgentStats">-</p>
                         </div>
@@ -156,11 +180,11 @@
             <section class="charts-section">
                 <div class="chart-container timeline-chart">
                     <div class="chart-header">
-                        <h3>Performance Timeline</h3>
+                        <h3>PERFORMANCE TIMELINE</h3>
                         <div class="chart-controls">
-                            <button class="chart-toggle-btn active" data-metric="posts">Posts</button>
-                            <button class="chart-toggle-btn" data-metric="impressions">Impressions</button>
-                            <button class="chart-toggle-btn" data-metric="both">Both</button>
+                            <button class="chart-toggle-btn active" data-metric="posts">POSTS</button>
+                            <button class="chart-toggle-btn" data-metric="impressions">IMPRESSIONS</button>
+                            <button class="chart-toggle-btn" data-metric="both">BOTH</button>
                         </div>
                     </div>
                     <div class="chart-wrapper">
@@ -171,7 +195,7 @@
                 <div class="charts-grid">
                     <div class="chart-container">
                         <div class="chart-header">
-                            <h3>Posts by Agent</h3>
+                            <h3>POSTS BY MICRO-INFLUENCER</h3>
                         </div>
                         <div class="chart-wrapper">
                             <canvas id="postsChart"></canvas>
@@ -180,7 +204,7 @@
 
                     <div class="chart-container">
                         <div class="chart-header">
-                            <h3>Impressions by Agent</h3>
+                            <h3>IMPRESSIONS BY MICRO-INFLUENCER</h3>
                         </div>
                         <div class="chart-wrapper">
                             <canvas id="impressionsChart"></canvas>
@@ -192,7 +216,7 @@
 <!-- Data Table Section -->
             <section class="table-section">
                 <div class="section-header">
-                    <h3>Detailed Performance Data</h3>
+                    <h3>DETAILED PERFORMANCE DATA</h3>
                     <div class="table-controls">
                         <div class="search-box">
                             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -224,7 +248,7 @@
                                     </svg>
                                 </th>
                                 <th class="sortable" data-column="agent">
-                                    Agent
+                                    Micro-Influencer
                                     <svg class="sort-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                         <path d="M7 10l5-5 5 5"></path>
                                         <path d="M7 14l5 5 5-5"></path>
@@ -261,7 +285,7 @@
 
                 <div class="table-pagination">
                     <div class="pagination-info">
-                        Showing <span id="showingStart">0</span> - <span id="showingEnd">0</span> of <span id="totalRows">0</span> entries
+                        SHOWING <span id="showingStart">0</span> - <span id="showingEnd">0</span> OF <span id="totalRows">0</span> ENTRIES
                     </div>
                     <div class="pagination-controls">
                         <button id="prevPage" class="pagination-btn" disabled>

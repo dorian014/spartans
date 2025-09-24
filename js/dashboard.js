@@ -3,7 +3,7 @@
 // State management
 let currentState = {
     selectedAgents: [],
-    dateRange: '30',
+    dateRange: '7',  // Changed to 7 days to match our data
     currentPage: 1,
     rowsPerPage: CONFIG.rowsPerPage || 10,
     sortColumn: 'date',
@@ -39,7 +39,7 @@ async function initializeDashboard() {
             return;
         }
 
-        // Populate agent filter
+        // Populate micro-influencer filter
         populateAgentFilter();
 
         // Apply initial filters
@@ -83,23 +83,22 @@ function updateStatsCards() {
     // Total Impressions
     document.getElementById('totalImpressions').textContent = utils.formatNumber(stats.totalImpressions);
 
-    // Top 30 Posts per Day - using random number between 25000-35000 for demo
-    const randomTop30 = Math.floor(Math.random() * 10000) + 25000;
-    document.getElementById('avgPostsPerDay').textContent = utils.formatNumber(randomTop30);
+    // Average Posts per Day
+    document.getElementById('avgPostsPerDay').textContent = utils.formatNumber(stats.avgPostsPerDay);
 
-    // Top Agent
+    // Top Micro-Influencer
     if (stats.topAgent) {
         document.getElementById('topAgent').textContent = stats.topAgent.display_name;
         document.getElementById('topAgentStats').textContent =
-            `${utils.formatNumber(stats.topAgent.posts)} posts`;
+            `${utils.formatNumber(stats.topAgent.posts)} POSTS`;
     } else {
         document.getElementById('topAgent').textContent = '-';
         document.getElementById('topAgentStats').textContent = '-';
     }
 
     // Update change indicators (placeholder for trend calculation)
-    document.getElementById('postsChange').textContent = `${stats.uniqueDays} days • ${stats.uniqueAgents} agents`;
-    document.getElementById('impressionsChange').textContent = `Avg ${utils.formatNumber(stats.avgImpressionsPerDay)}/day`;
+    document.getElementById('postsChange').textContent = `${stats.uniqueDays} DAYS • ${stats.uniqueAgents} MICRO-INFLUENCERS`;
+    document.getElementById('impressionsChange').textContent = `AVG ${utils.formatNumber(stats.avgImpressionsPerDay)}/DAY`;
 }
 
 // Update all charts
@@ -160,7 +159,7 @@ function updateDataTable() {
     tableBody.innerHTML = pageData.map(record => `
         <tr>
             <td>${utils.formatDate(record.date)}</td>
-            <td><span class="agent-badge">${record.display_name}</span></td>
+            <td><span class="micro-influencer-badge">${record.display_name}</span></td>
             <td><a href="https://x.com/${record.xHandle.replace('@', '')}" target="_blank" class="handle-badge">${record.xHandle}</a></td>
             <td>${utils.formatNumber(record.posts)}</td>
             <td>${utils.formatNumber(record.impressions)}</td>
@@ -210,7 +209,7 @@ function updatePaginationControls(totalPages) {
     }).join('');
 }
 
-// Populate agent filter dropdown
+// Populate micro-influencer filter dropdown
 function populateAgentFilter() {
     const agentsList = document.getElementById('agentsList');
     const agents = utils.DataManager.uniqueAgents || [];
@@ -222,7 +221,7 @@ function populateAgentFilter() {
         </label>
     `).join('');
 
-    // Update selected agents state
+    // Update selected micro-influencers state
     currentState.selectedAgents = [];  // Empty means all selected
 }
 
@@ -246,22 +245,33 @@ function updateDataStatus() {
 
 // Setup event listeners
 function setupEventListeners() {
-    // Agent filter dropdown
+    // Micro-influencer filter dropdown
     const agentBtn = document.getElementById('agentFilterBtn');
     const agentDropdown = document.getElementById('agentDropdown');
+
+    // Date range dropdown
+    const dateRangeBtn = document.getElementById('dateRangeBtn');
+    const dateRangeDropdown = document.getElementById('dateRangeDropdown');
 
     agentBtn.addEventListener('click', () => {
         agentDropdown.classList.toggle('show');
     });
 
-    // Close dropdown when clicking outside
+    dateRangeBtn.addEventListener('click', () => {
+        dateRangeDropdown.classList.toggle('show');
+    });
+
+    // Close dropdowns when clicking outside
     document.addEventListener('click', (e) => {
         if (!e.target.closest('.multi-select-wrapper')) {
             agentDropdown.classList.remove('show');
         }
+        if (!e.target.closest('.date-range-wrapper')) {
+            dateRangeDropdown.classList.remove('show');
+        }
     });
 
-    // Select/Clear all agents
+    // Select/Clear all micro-influencers
     document.getElementById('selectAllAgents').addEventListener('click', () => {
         document.querySelectorAll('.agent-checkbox').forEach(cb => cb.checked = true);
         updateAgentSelection();
@@ -272,14 +282,19 @@ function setupEventListeners() {
         updateAgentSelection();
     });
 
-    // Agent checkbox changes
+    // Micro-influencer checkbox changes
     document.getElementById('agentsList').addEventListener('change', updateAgentSelection);
 
-    // Date range filter
-    document.getElementById('dateRange').addEventListener('change', (e) => {
-        currentState.dateRange = e.target.value;
-        applyFilters();
-        updateDashboard();
+    // Date range selection
+    document.querySelectorAll('input[name="dateRange"]').forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            currentState.dateRange = e.target.value;
+            const selectedText = e.target.nextElementSibling.textContent.toUpperCase();
+            document.getElementById('selectedDateRangeText').textContent = selectedText;
+            dateRangeDropdown.classList.remove('show');
+            applyFilters();
+            updateDashboard();
+        });
     });
 
     // Chart metric toggle
@@ -357,7 +372,7 @@ function setupEventListeners() {
     });
 }
 
-// Update agent selection
+// Update micro-influencer selection
 function updateAgentSelection() {
     const checkboxes = document.querySelectorAll('.agent-checkbox');
     const selected = Array.from(checkboxes)
@@ -368,13 +383,13 @@ function updateAgentSelection() {
     const selectedText = document.getElementById('selectedAgentsText');
 
     if (selected.length === 0) {
-        selectedText.textContent = 'No agents selected';
+        selectedText.textContent = 'NO MICRO-INFLUENCERS SELECTED';
         currentState.selectedAgents = selected;
     } else if (selected.length === totalAgents) {
-        selectedText.textContent = 'All Agents';
+        selectedText.textContent = 'ALL MICRO-INFLUENCERS';
         currentState.selectedAgents = [];  // Empty means all
     } else {
-        selectedText.textContent = `${selected.length} of ${totalAgents} agents`;
+        selectedText.textContent = `${selected.length} OF ${totalAgents} MICRO-INFLUENCERS`;
         currentState.selectedAgents = selected;
     }
 

@@ -6,7 +6,7 @@ A comprehensive analytics dashboard for monitoring X (Twitter) account performan
 
 ## Overview
 
-The Spartans Dashboard is a high-performance analytics platform designed to track and visualize social media metrics for hundreds of X (Twitter) accounts. Built to handle over 300 agents generating 400,000+ daily posts, this dashboard provides real-time insights into engagement metrics, performance trends, and comprehensive data analysis.
+The Spartans Dashboard is a high-performance analytics platform designed to track and visualize social media metrics for hundreds of X (Twitter) accounts. Built to handle over 300 micro-influencers generating 400,000+ daily posts, this dashboard provides real-time insights into engagement metrics, performance trends, and comprehensive data analysis.
 
 ## Features
 
@@ -14,7 +14,7 @@ The Spartans Dashboard is a high-performance analytics platform designed to trac
 - 🌙 **Dark Theme UI**: Modern glassmorphism design for optimal viewing
 - 📊 **Interactive Visualizations**: Real-time charts powered by Chart.js
 - 📈 **Performance Metrics**: Track posts, impressions, and engagement rates
-- 🔍 **Advanced Filtering**: Multi-select agent filtering and date range selection
+- 🔍 **Advanced Filtering**: Multi-select micro-influencer filtering and date range selection
 - 📱 **Responsive Design**: Optimized for desktop and tablet viewing
 - 📥 **Data Export**: CSV export functionality for detailed analysis
 - ⚡ **High Performance**: Optimized to handle 400k+ daily posts
@@ -55,14 +55,14 @@ The Spartans Dashboard is a high-performance analytics platform designed to trac
 
 ### Key Metrics
 - Total Posts & Impressions
-- Average Posts per Day/Agent
-- Top Performing Agents
+- Average Posts per Day/Micro-Influencer
+- Top Performing Micro-Influencers
 - Real-time Data Status
 
 ### Visualizations
 - Performance Timeline (Line Chart)
-- Posts by Agent (Bar Chart)
-- Impressions by Agent (Bar Chart)
+- Posts by Micro-Influencer (Bar Chart)
+- Impressions by Micro-Influencer (Bar Chart)
 - Interactive filters for custom analysis
 
 ### Data Management
@@ -84,7 +84,7 @@ The dashboard automatically deploys to GitHub Pages on every push to the main br
 ## Performance
 
 Optimized for large-scale data processing:
-- Handles 300+ agents
+- Handles 300+ micro-influencers
 - Processes 400,000+ daily posts
 - Real-time filtering and aggregation
 - Efficient pagination for data tables

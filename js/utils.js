@@ -34,7 +34,7 @@ const DataManager = {
             new Date(b.date) - new Date(a.date)
         );
 
-        // Extract unique agents
+        // Extract unique micro-influencers
         const agentsMap = new Map();
         this.processedData.forEach(record => {
             if (!agentsMap.has(record.agent_id)) {
@@ -65,7 +65,7 @@ const DataManager = {
     applyFilters(selectedAgents, dateRangeDays) {
         let filtered = [...this.processedData];
 
-        // Filter by agents
+        // Filter by micro-influencers
         if (selectedAgents && selectedAgents.length > 0) {
             filtered = filtered.filter(record =>
                 selectedAgents.includes(record.agent_id)
@@ -74,8 +74,11 @@ const DataManager = {
 
         // Filter by date range
         if (dateRangeDays !== 'all') {
-            const cutoffDate = new Date();
-            cutoffDate.setDate(cutoffDate.getDate() - parseInt(dateRangeDays));
+            // Get the most recent date from the data instead of using current date
+            const dates = filtered.map(r => new Date(r.date));
+            const mostRecentDate = new Date(Math.max(...dates));
+            const cutoffDate = new Date(mostRecentDate);
+            cutoffDate.setDate(cutoffDate.getDate() - parseInt(dateRangeDays) + 1);
             filtered = filtered.filter(record =>
                 new Date(record.date) >= cutoffDate
             );
@@ -106,7 +109,7 @@ const DataManager = {
         const uniqueDays = new Set(this.filteredData.map(r => r.date)).size;
         const uniqueAgents = new Set(this.filteredData.map(r => r.agent_id)).size;
 
-        // Calculate per-agent totals for top agent
+        // Calculate per-influencer totals for top influencer
         const agentTotals = {};
         this.filteredData.forEach(record => {
             if (!agentTotals[record.agent_id]) {
@@ -120,7 +123,7 @@ const DataManager = {
             agentTotals[record.agent_id].impressions += record.impressions;
         });
 
-        // Find top agent by posts
+        // Find top micro-influencer by posts
         let topAgent = null;
         let maxPosts = 0;
         for (const [agentId, stats] of Object.entries(agentTotals)) {
@@ -174,13 +177,13 @@ const DataManager = {
         };
     },
 
-    // Get data for agent charts
+    // Get data for micro-influencer charts
     getAgentData() {
         if (!this.filteredData || this.filteredData.length === 0) {
             return { labels: [], posts: [], impressions: [] };
         }
 
-        // Aggregate by agent
+        // Aggregate by micro-influencer
         const agentMap = new Map();
         this.filteredData.forEach(record => {
             if (!agentMap.has(record.agent_id)) {
@@ -199,7 +202,7 @@ const DataManager = {
         const agents = Array.from(agentMap.entries())
             .map(([id, data]) => ({ id, ...data }))
             .sort((a, b) => b.posts - a.posts)
-            .slice(0, 10); // Top 10 agents
+            .slice(0, 10); // Top 10 micro-influencers
 
         return {
             labels: agents.map(a => a.display_name),
@@ -272,7 +275,7 @@ function formatDateTime(dateStr) {
 
 // CSV Export utility
 function exportToCSV(data, filename) {
-    const headers = ['Date', 'Agent', 'X Handle', 'Posts', 'Impressions'];
+    const headers = ['Date', 'Micro-Influencer', 'X Handle', 'Posts', 'Impressions'];
     const rows = data.map(record => [
         record.date,
         record.display_name,

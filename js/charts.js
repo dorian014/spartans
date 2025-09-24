@@ -166,7 +166,7 @@ function initTimelineChart(data, metric = 'posts') {
     });
 }
 
-// Initialize posts by agent chart
+// Initialize posts by micro-influencer chart
 function initPostsChart(data, sortOrder = 'desc') {
     const ctx = document.getElementById('postsChart');
     if (!ctx) return;
@@ -194,10 +194,16 @@ function initPostsChart(data, sortOrder = 'desc') {
             datasets: [{
                 label: 'Posts',
                 data: sortedPosts,
-                backgroundColor: createGradient(ctx, CONFIG.chartColors.primary),
-                borderColor: CONFIG.chartColors.primary,
-                borderWidth: 1,
-                borderRadius: 4
+                backgroundColor: 'rgba(0, 123, 141, 0.3)',
+                borderColor: CONFIG.chartColors.secondary,
+                borderWidth: 2,
+                borderRadius: 8,
+                borderSkipped: false,
+                barPercentage: 0.7,
+                categoryPercentage: 0.8,
+                hoverBackgroundColor: 'rgba(0, 123, 141, 0.5)',
+                hoverBorderColor: CONFIG.chartColors.secondary,
+                hoverBorderWidth: 3
             }]
         },
         options: {
@@ -231,32 +237,39 @@ function initPostsChart(data, sortOrder = 'desc') {
                     },
                     ticks: {
                         font: {
-                            size: 11
+                            size: 11,
+                            weight: '600'
                         },
                         maxRotation: 45,
-                        minRotation: 45
+                        minRotation: 45,
+                        color: 'rgba(255, 255, 255, 0.8)'
                     }
                 },
                 y: {
                     grid: {
-                        color: CONFIG.chartColors.grid,
-                        drawBorder: false
+                        color: 'rgba(255, 255, 255, 0.05)',
+                        drawBorder: false,
+                        lineWidth: 1
                     },
                     ticks: {
                         callback: function(value) {
                             return utils.formatNumber(value);
                         },
                         font: {
-                            size: 11
-                        }
-                    }
+                            size: 11,
+                            weight: '500'
+                        },
+                        color: 'rgba(255, 255, 255, 0.7)',
+                        padding: 8
+                    },
+                    beginAtZero: true
                 }
             }
         }
     });
 }
 
-// Initialize impressions by agent chart
+// Initialize impressions by micro-influencer chart
 function initImpressionsChart(data, sortOrder = 'desc') {
     const ctx = document.getElementById('impressionsChart');
     if (!ctx) return;
@@ -284,10 +297,16 @@ function initImpressionsChart(data, sortOrder = 'desc') {
             datasets: [{
                 label: 'Impressions',
                 data: sortedImpressions,
-                backgroundColor: createGradient(ctx, CONFIG.chartColors.secondary),
+                backgroundColor: 'rgba(0, 123, 141, 0.3)',
                 borderColor: CONFIG.chartColors.secondary,
-                borderWidth: 1,
-                borderRadius: 4
+                borderWidth: 2,
+                borderRadius: 8,
+                borderSkipped: false,
+                barPercentage: 0.7,
+                categoryPercentage: 0.8,
+                hoverBackgroundColor: 'rgba(0, 123, 141, 0.5)',
+                hoverBorderColor: CONFIG.chartColors.secondary,
+                hoverBorderWidth: 3
             }]
         },
         options: {
@@ -321,25 +340,32 @@ function initImpressionsChart(data, sortOrder = 'desc') {
                     },
                     ticks: {
                         font: {
-                            size: 11
+                            size: 11,
+                            weight: '600'
                         },
                         maxRotation: 45,
-                        minRotation: 45
+                        minRotation: 45,
+                        color: 'rgba(255, 255, 255, 0.8)'
                     }
                 },
                 y: {
                     grid: {
-                        color: CONFIG.chartColors.grid,
-                        drawBorder: false
+                        color: 'rgba(255, 255, 255, 0.05)',
+                        drawBorder: false,
+                        lineWidth: 1
                     },
                     ticks: {
                         callback: function(value) {
                             return utils.formatNumber(value);
                         },
                         font: {
-                            size: 11
-                        }
-                    }
+                            size: 11,
+                            weight: '500'
+                        },
+                        color: 'rgba(255, 255, 255, 0.7)',
+                        padding: 8
+                    },
+                    beginAtZero: true
                 }
             }
         }

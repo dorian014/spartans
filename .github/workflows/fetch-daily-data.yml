@@ -1,4 +1,4 @@
-name: 📈 Fetch Daily Agent Data
+name: 📈 Fetch Daily Micro-Influencer Data
 
 run-name: ${{ github.event_name == 'schedule' && '⏰ Scheduled daily data fetch' || github.event_name == 'workflow_dispatch' && '🔄 Manual data fetch by @' + github.actor || '🚀 Data fetch after workflow update' }}
 

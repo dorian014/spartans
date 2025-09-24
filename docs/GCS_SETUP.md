@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Spartans Dashboard fetches daily agent performance data from Google Cloud Storage (GCS) and aggregates it for display.
+The Spartans Dashboard fetches daily micro-influencer performance data from Google Cloud Storage (GCS) and aggregates it for display.
 
 ## GCS File Structure
 
@@ -22,7 +22,7 @@ gs://[your-bucket]/spartans/daily/
 
 ## Daily File Format
 
-Each daily file should contain agent performance data for that specific day:
+Each daily file should contain micro-influencer performance data for that specific day:
 
 ```json
 {
@@ -45,7 +45,7 @@ Each daily file should contain agent performance data for that specific day:
       "posts": 1100,
       "impressions": 110000
     }
-    // ... more agents
+    // ... more micro-influencers
   ]
 }
 ```
