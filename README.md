@@ -4,17 +4,9 @@
 
   ### A comprehensive analytics dashboard for monitoring X (Twitter) account performance metrics
 
-  <a href="https://dorian014.github.io/spartans/" style="text-decoration: none;">
-    <table style="margin: 20px auto; border-collapse: collapse;">
-      <tr>
-        <td style="background: #E9ff00; padding: 10px 15px; border-radius: 8px 0 0 8px; border: 2px solid #007b8d;">
-          <img src="assets/logo_small.png" height="30" alt="Spartans Logo" />
-        </td>
-        <td style="background: #000; color: #E9ff00; padding: 10px 20px; border-radius: 0 8px 8px 0; border: 2px solid #007b8d; border-left: none; font-family: 'Work Sans', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 1px;">
-          VIEW LIVE DASHBOARD
-        </td>
-      </tr>
-    </table>
+  <a href="https://dorian014.github.io/spartans/">
+    <img src="assets/logo_small.png" height="40" alt="Spartans Logo" style="margin-bottom: 10px;" /><br/>
+    <img src="https://img.shields.io/badge/🏛️_VIEW_LIVE_DASHBOARD-E9ff00?style=for-the-badge&labelColor=000&color=E9ff00" alt="View Live Dashboard" />
   </a>
 
   <sub>**Developed by Qstarlabs Technology**</sub>
