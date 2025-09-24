@@ -539,6 +539,48 @@
     margin-top: var(--spacing-lg);
 }
 
+/* Table Links */
+.data-table a {
+    color: var(--accent-secondary);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+.data-table a:hover {
+    color: var(--accent-primary);
+}
+
+/* Agent and Handle Badges */
+.agent-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(0, 123, 141, 0.15);
+    color: var(--text-primary);
+    border: 1px solid var(--accent-secondary);
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.handle-badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    background: rgba(233, 255, 0, 0.1);
+    border: 1px solid rgba(233, 255, 0, 0.3);
+    border-radius: 12px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+.handle-badge:hover {
+    background: rgba(233, 255, 0, 0.2);
+    border-color: var(--accent-primary);
+    transform: translateY(-1px);
+}
+
 .data-table {
     width: 100%;
     border-collapse: collapse;

@@ -161,8 +161,8 @@ function updateDataTable() {
     tableBody.innerHTML = pageData.map(record => `
         <tr>
             <td>${utils.formatDate(record.date)}</td>
-            <td>${record.display_name}</td>
-            <td><a href="https://x.com/${record.xHandle.replace('@', '')}" target="_blank">${record.xHandle}</a></td>
+            <td><span class="agent-badge">${record.display_name}</span></td>
+            <td><a href="https://x.com/${record.xHandle.replace('@', '')}" target="_blank" class="handle-badge">${record.xHandle}</a></td>
             <td>${utils.formatNumber(record.posts)}</td>
             <td>${utils.formatNumber(record.impressions)}</td>
         </tr>
