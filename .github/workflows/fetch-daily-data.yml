@@ -11,7 +11,7 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/fetch-daily-data.yml'
-      - 'scripts/aggregate-data.js'
+      - 'js/aggregate-data.js'
 
 permissions:
   contents: write
@@ -69,7 +69,7 @@ jobs:
 
     - name: 📊 Aggregate all daily data into dashboard format
       run: |
-        node scripts/aggregate-data.js
+        node js/aggregate-data.js
 
     - name: 🧹 Clean up old daily files (keep last 30 days)
       run: |
