@@ -5,7 +5,7 @@
 echo "Starting local test server..."
 echo "----------------------------------------"
 echo "Dashboard will be available at:"
-echo "  http://localhost:8000/login.html"
+echo "  http://localhost:8000/"
 echo ""
 echo "Test credentials:"
 echo "  Admin: admin123"

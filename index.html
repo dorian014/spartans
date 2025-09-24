@@ -5,310 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PERSONAS - X Analytics Dashboard</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/dashboard.css">
 </head>
-<body class="dashboard">
-    <!-- Header -->
-    <header class="dashboard-header">
-        <div class="header-container">
-            <div class="header-left">
+<body class="login-page">
+    <div class="login-container">
+        <div class="login-card">
+            <div class="login-header">
                 <h1 class="logo">PERSONAS</h1>
-                <span class="header-title">X Account Performance Dashboard</span>
+                <p class="tagline">X Account Performance Analytics</p>
             </div>
 
-            <div class="header-center">
-                <div class="filter-section">
-                    <div class="filter-group">
-                        <label for="agentFilter">Agents</label>
-                        <div class="multi-select-wrapper">
-                            <button id="agentFilterBtn" class="multi-select-toggle">
-                                <span id="selectedAgentsText">All Agents</span>
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <polyline points="6 9 12 15 18 9"></polyline>
-                                </svg>
-                            </button>
-                            <div id="agentDropdown" class="multi-select-dropdown">
-                                <div class="dropdown-header">
-                                    <button id="selectAllAgents" class="select-all-btn">Select All</button>
-                                    <button id="clearAllAgents" class="clear-all-btn">Clear All</button>
-                                </div>
-                                <div id="agentsList" class="dropdown-list">
-                                    <!-- Agent checkboxes will be populated here -->
-                                </div>
-                            </div>
+            <div class="login-content">
+                <h2>Secure Access</h2>
+                <p class="login-description">Enter your credentials to access the dashboard</p>
+
+                <form id="loginForm" autocomplete="off">
+                    <div class="form-group">
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter password"
+                            class="password-input"
+                            required
+                            autocomplete="new-password"
+                        >
+                        <div class="input-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                                <path d="M7 11V7a5 5 0 0110 0v4"></path>
+                            </svg>
                         </div>
                     </div>
 
-                    <div class="filter-group">
-                        <label for="dateRange">Date Range</label>
-                        <select id="dateRange" class="date-range-select">
-                            <option value="7">Last 7 days</option>
-                            <option value="30" selected>Last 30 days</option>
-                            <option value="90">Last 90 days</option>
-                            <option value="all">All time</option>
-                        </select>
+                    <div id="errorMessage" class="error-message"></div>
+
+                    <button type="submit" class="login-button">
+                        <span>Access Dashboard</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </form>
+
+                <div class="login-footer">
+                    <div class="security-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <span>Secured with SHA-256 encryption</span>
                     </div>
                 </div>
-            </div>
-
-            <div class="header-right">
-                <div class="data-status" id="dataStatus">
-                    <div class="status-indicator" data-status="loading"></div>
-                    <span class="status-text">Loading...</span>
-                </div>
-
-                <button id="logoutBtn" class="logout-btn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4"></path>
-                        <polyline points="16 17 21 12 16 7"></polyline>
-                        <line x1="21" y1="12" x2="9" y2="12"></line>
-                    </svg>
-                    <span>Sign Out</span>
-                </button>
             </div>
         </div>
-    </header>
 
-    <!-- Main Content -->
-    <main class="dashboard-main">
-        <div class="container">
-            <!-- Stats Cards -->
-            <section class="stats-section">
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path>
-                                <polyline points="7 10 12 15 17 10"></polyline>
-                                <line x1="12" y1="15" x2="12" y2="3"></line>
-                            </svg>
-                        </div>
-                        <div class="stat-content">
-                            <h3 class="stat-label">Total Posts</h3>
-                            <p class="stat-value" id="totalPosts">-</p>
-                            <p class="stat-change" id="postsChange">-</p>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
-                                <circle cx="12" cy="12" r="3"></circle>
-                            </svg>
-                        </div>
-                        <div class="stat-content">
-                            <h3 class="stat-label">Total Impressions</h3>
-                            <p class="stat-value" id="totalImpressions">-</p>
-                            <p class="stat-change" id="impressionsChange">-</p>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <line x1="12" y1="2" x2="12" y2="6"></line>
-                                <line x1="12" y1="18" x2="12" y2="22"></line>
-                                <line x1="4.93" y1="4.93" x2="7.76" y2="7.76"></line>
-                                <line x1="16.24" y1="16.24" x2="19.07" y2="19.07"></line>
-                                <line x1="2" y1="12" x2="6" y2="12"></line>
-                                <line x1="18" y1="12" x2="22" y2="12"></line>
-                                <line x1="4.93" y1="19.07" x2="7.76" y2="16.24"></line>
-                                <line x1="16.24" y1="7.76" x2="19.07" y2="4.93"></line>
-                            </svg>
-                        </div>
-                        <div class="stat-content">
-                            <h3 class="stat-label">Avg Posts/Day</h3>
-                            <p class="stat-value" id="avgPostsPerDay">-</p>
-                            <p class="stat-change">per agent</p>
-                        </div>
-                    </div>
-
-                    <div class="stat-card">
-                        <div class="stat-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="8" r="7"></circle>
-                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
-                            </svg>
-                        </div>
-                        <div class="stat-content">
-                            <h3 class="stat-label">Top Agent</h3>
-                            <p class="stat-value" id="topAgent">-</p>
-                            <p class="stat-change" id="topAgentStats">-</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Charts Section -->
-            <section class="charts-section">
-                <div class="chart-container timeline-chart">
-                    <div class="chart-header">
-                        <h3>Performance Timeline</h3>
-                        <div class="chart-controls">
-                            <button class="chart-toggle-btn active" data-metric="posts">Posts</button>
-                            <button class="chart-toggle-btn" data-metric="impressions">Impressions</button>
-                            <button class="chart-toggle-btn" data-metric="both">Both</button>
-                        </div>
-                    </div>
-                    <div class="chart-wrapper">
-                        <canvas id="timelineChart"></canvas>
-                    </div>
-                </div>
-
-                <div class="charts-grid">
-                    <div class="chart-container">
-                        <div class="chart-header">
-                            <h3>Posts by Agent</h3>
-                            <button class="chart-sort-btn" data-sort="desc">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 3h18v18H3z"></path>
-                                    <path d="M8 12h8"></path>
-                                    <path d="M12 8v8"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="chart-wrapper">
-                            <canvas id="postsChart"></canvas>
-                        </div>
-                    </div>
-
-                    <div class="chart-container">
-                        <div class="chart-header">
-                            <h3>Impressions by Agent</h3>
-                            <button class="chart-sort-btn" data-sort="desc">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                    <path d="M3 3h18v18H3z"></path>
-                                    <path d="M8 12h8"></path>
-                                    <path d="M12 8v8"></path>
-                                </svg>
-                            </button>
-                        </div>
-                        <div class="chart-wrapper">
-                            <canvas id="impressionsChart"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Leaderboard Section (GDC Mode Only) -->
-            <section id="leaderboardSection" class="leaderboard-section" style="display: none;">
-                <div class="section-header">
-                    <h3>Agent Leaderboard</h3>
-                </div>
-                <div id="leaderboard" class="leaderboard-container">
-                    <!-- Leaderboard will be populated here -->
-                </div>
-            </section>
-
-            <!-- Data Table Section -->
-            <section class="table-section">
-                <div class="section-header">
-                    <h3>Detailed Performance Data</h3>
-                    <div class="table-controls">
-                        <div class="search-box">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <path d="m21 21-4.35-4.35"></path>
-                            </svg>
-                            <input type="text" id="tableSearch" placeholder="Search agents, handles, or dates...">
-                        </div>
-                        <button id="exportBtn" class="export-btn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path>
-                                <polyline points="7 10 12 15 17 10"></polyline>
-                                <line x1="12" y1="15" x2="12" y2="3"></line>
-                            </svg>
-                            <span>Export CSV</span>
-                        </button>
-                    </div>
-                </div>
-
-                <div class="table-container">
-                    <table id="dataTable" class="data-table">
-                        <thead>
-                            <tr>
-                                <th class="sortable" data-column="date">
-                                    Date
-                                    <svg class="sort-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M7 10l5-5 5 5"></path>
-                                        <path d="M7 14l5 5 5-5"></path>
-                                    </svg>
-                                </th>
-                                <th class="sortable" data-column="agent">
-                                    Agent
-                                    <svg class="sort-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M7 10l5-5 5 5"></path>
-                                        <path d="M7 14l5 5 5-5"></path>
-                                    </svg>
-                                </th>
-                                <th class="sortable" data-column="xHandle">
-                                    X Handle
-                                    <svg class="sort-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M7 10l5-5 5 5"></path>
-                                        <path d="M7 14l5 5 5-5"></path>
-                                    </svg>
-                                </th>
-                                <th class="sortable" data-column="posts">
-                                    Posts
-                                    <svg class="sort-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M7 10l5-5 5 5"></path>
-                                        <path d="M7 14l5 5 5-5"></path>
-                                    </svg>
-                                </th>
-                                <th class="sortable" data-column="impressions">
-                                    Impressions
-                                    <svg class="sort-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                        <path d="M7 10l5-5 5 5"></path>
-                                        <path d="M7 14l5 5 5-5"></path>
-                                    </svg>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody id="tableBody">
-                            <!-- Table rows will be populated here -->
-                        </tbody>
-                    </table>
-                </div>
-
-                <div class="table-pagination">
-                    <div class="pagination-info">
-                        Showing <span id="showingStart">0</span> - <span id="showingEnd">0</span> of <span id="totalRows">0</span> entries
-                    </div>
-                    <div class="pagination-controls">
-                        <button id="prevPage" class="pagination-btn" disabled>
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="15 18 9 12 15 6"></polyline>
-                            </svg>
-                        </button>
-                        <div id="pageNumbers" class="page-numbers">
-                            <!-- Page numbers will be populated here -->
-                        </div>
-                        <button id="nextPage" class="pagination-btn">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="9 18 15 12 9 6"></polyline>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <!-- Loading Overlay -->
-    <div id="loadingOverlay" class="loading-overlay">
-        <div class="loading-spinner">
-            <div class="spinner"></div>
-            <p>Loading dashboard data...</p>
+        <div class="background-decoration">
+            <div class="gradient-orb orb-1"></div>
+            <div class="gradient-orb orb-2"></div>
+            <div class="gradient-orb orb-3"></div>
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.js"></script>
     <script src="config.js"></script>
     <script src="js/auth.js"></script>
-    <script src="js/utils.js"></script>
-    <script src="js/charts.js"></script>
-    <script src="js/dashboard.js"></script>
 </body>
 </html>

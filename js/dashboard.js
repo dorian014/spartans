@@ -15,7 +15,7 @@ let currentState = {
 document.addEventListener('DOMContentLoaded', async function() {
     // Check authentication
     if (!checkAuth()) {
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
         return;
     }
 
@@ -380,7 +380,7 @@ function setupEventListeners() {
     // Logout
     document.getElementById('logoutBtn').addEventListener('click', () => {
         sessionStorage.clear();
-        window.location.href = 'login.html';
+        window.location.href = 'index.html';
     });
 }
 

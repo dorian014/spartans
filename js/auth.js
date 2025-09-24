@@ -25,7 +25,7 @@ function checkAuth() {
 if (window.location.pathname.includes('login.html')) {
     const auth = checkAuth();
     if (auth) {
-        window.location.href = 'index.html';
+        window.location.href = 'main.html';
     }
 }
 
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 // Redirect to dashboard
                 setTimeout(() => {
-                    window.location.href = 'index.html';
+                    window.location.href = 'main.html';
                 }, 500);
             } else {
                 // Show error

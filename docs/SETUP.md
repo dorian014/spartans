@@ -40,7 +40,7 @@ The GitHub Action runs hourly to fetch the latest data from GCS. You can also ma
    python -m http.server 8000
    ```
 
-2. Open: `http://localhost:8000/login.html`
+2. Open: `http://localhost:8000/`
 
 3. Default passwords (SHA-256 hashed):
    - Admin: `admin123` → Full access
