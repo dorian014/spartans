@@ -4,8 +4,8 @@
   "summary": {
     "totalAgents": 5,
     "totalDays": 7,
-    "totalPosts": 43750,
-    "totalImpressions": 4375000
+    "totalPosts": 1450,
+    "totalImpressions": 2875000
   },
   "records": [
     {
@@ -13,7 +13,7 @@
       "agent_id": "agent_001",
       "display_name": "Michael",
       "xHandle": "@michael_ai",
-      "posts": 1250,
+      "posts": 42,
       "impressions": 125000
     },
     {
@@ -21,7 +21,7 @@
       "agent_id": "agent_002",
       "display_name": "Jennifer",
       "xHandle": "@jennifer_bot",
-      "posts": 1100,
+      "posts": 38,
       "impressions": 110000
     },
     {
@@ -29,7 +29,7 @@
       "agent_id": "agent_003",
       "display_name": "David",
       "xHandle": "@david_tech",
-      "posts": 1350,
+      "posts": 45,
       "impressions": 135000
     },
     {
@@ -37,7 +37,7 @@
       "agent_id": "agent_004",
       "display_name": "Sarah",
       "xHandle": "@sarah_ml",
-      "posts": 1200,
+      "posts": 35,
       "impressions": 120000
     },
     {
@@ -45,7 +45,7 @@
       "agent_id": "agent_005",
       "display_name": "James",
       "xHandle": "@james_data",
-      "posts": 1350,
+      "posts": 45,
       "impressions": 135000
     },
     {
@@ -53,7 +53,7 @@
       "agent_id": "agent_001",
       "display_name": "Michael",
       "xHandle": "@michael_ai",
-      "posts": 1200,
+      "posts": 35,
       "impressions": 120000
     },
     {
@@ -77,7 +77,7 @@
       "agent_id": "agent_004",
       "display_name": "Sarah",
       "xHandle": "@sarah_ml",
-      "posts": 1250,
+      "posts": 42,
       "impressions": 125000
     },
     {
@@ -141,7 +141,7 @@
       "agent_id": "agent_002",
       "display_name": "Jennifer",
       "xHandle": "@jennifer_bot",
-      "posts": 1100,
+      "posts": 38,
       "impressions": 110000
     },
     {
@@ -149,7 +149,7 @@
       "agent_id": "agent_003",
       "display_name": "David",
       "xHandle": "@david_tech",
-      "posts": 1250,
+      "posts": 42,
       "impressions": 125000
     },
     {
@@ -157,7 +157,7 @@
       "agent_id": "agent_004",
       "display_name": "Sarah",
       "xHandle": "@sarah_ml",
-      "posts": 1200,
+      "posts": 35,
       "impressions": 120000
     },
     {

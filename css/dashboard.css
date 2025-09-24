@@ -314,6 +314,9 @@
     font-size: 0.875rem;
     color: var(--text-secondary);
     margin-bottom: var(--spacing-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 .stat-value {
@@ -363,8 +366,10 @@
 
 .chart-header h3 {
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .chart-controls {
@@ -419,8 +424,10 @@
 
 .section-header h3 {
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 .leaderboard-container {
