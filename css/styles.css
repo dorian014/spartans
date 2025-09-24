@@ -1,8 +1,7 @@
 /* X Account Analytics Dashboard - Dark Theme Styles */
 
-/* Import fonts - Work Sans and CORA for Spartans brand */
+/* Import fonts - Work Sans for Spartans brand */
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap'); /* CORA-like font alternative */
 
 /* CSS Variables */
 :root {
@@ -146,18 +145,18 @@ body {
 }
 
 .tagline {
-    font-family: 'Bebas Neue', 'Work Sans', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     color: var(--accent-secondary);
     font-size: 1.1rem;
-    font-weight: 400;
+    font-weight: 600;
     letter-spacing: 0.12em;
     text-transform: uppercase;
 }
 
 .login-content h2 {
-    font-family: 'Bebas Neue', 'Work Sans', sans-serif;
+    font-family: 'Work Sans', sans-serif;
     font-size: 1.8rem;
-    font-weight: 400;
+    font-weight: 700;
     letter-spacing: 0.05em;
     margin-bottom: var(--spacing-sm);
 }
