@@ -378,7 +378,8 @@
 .chart-toggle-btn.active {
     background: var(--gradient-primary);
     border-color: transparent;
-    color: white;
+    color: var(--bg-primary);
+    font-weight: 600;
 }
 
 .chart-wrapper {
@@ -503,10 +504,23 @@
     background: var(--gradient-primary);
     border: none;
     border-radius: var(--radius-md);
-    color: white;
+    color: var(--bg-primary);
     font-size: 0.875rem;
+    font-weight: 600;
     cursor: pointer;
     transition: all var(--transition-base);
+}
+
+.export-btn svg {
+    stroke: var(--bg-primary);
+}
+
+.chart-toggle-btn.active svg {
+    stroke: var(--bg-primary);
+}
+
+.page-number.active svg {
+    stroke: var(--bg-primary);
 }
 
 .export-btn:hover {
@@ -650,7 +664,8 @@
 .page-number.active {
     background: var(--gradient-primary);
     border-color: transparent;
-    color: white;
+    color: var(--bg-primary);
+    font-weight: 600;
 }
 
 /* Loading Overlay */
